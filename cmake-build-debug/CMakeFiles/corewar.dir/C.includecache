@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/nwispmot/Desktop/corewar/asm.c
+asm.h
+/Users/nwispmot/Desktop/corewar/asm.h
+
+/Users/nwispmot/Desktop/corewar/asm.h
+libft/libft.h
+/Users/nwispmot/Desktop/corewar/libft/libft.h
+op.h
+/Users/nwispmot/Desktop/corewar/op.h
+
+/Users/nwispmot/Desktop/corewar/libft/libft.h
+sys/types.h
+-
+sys/stat.h
+-
+fcntl.h
+-
+string.h
+-
+stdlib.h
+-
+unistd.h
+-
+
+/Users/nwispmot/Desktop/corewar/op.h
+
