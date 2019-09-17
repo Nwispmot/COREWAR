@@ -75,6 +75,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/nwispmot/Desktop/corewar/libft/ft_strnstr.c" "/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles/corewar.dir/libft/ft_strnstr.c.o"
   "/Users/nwispmot/Desktop/corewar/libft/ft_strrchr.c" "/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles/corewar.dir/libft/ft_strrchr.c.o"
   "/Users/nwispmot/Desktop/corewar/libft/ft_strsplit.c" "/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles/corewar.dir/libft/ft_strsplit.c.o"
+  "/Users/nwispmot/Desktop/corewar/libft/ft_strsplit_n.c" "/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles/corewar.dir/libft/ft_strsplit_n.c.o"
   "/Users/nwispmot/Desktop/corewar/libft/ft_strstr.c" "/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles/corewar.dir/libft/ft_strstr.c.o"
   "/Users/nwispmot/Desktop/corewar/libft/ft_strsub.c" "/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles/corewar.dir/libft/ft_strsub.c.o"
   "/Users/nwispmot/Desktop/corewar/libft/ft_strtrim.c" "/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles/corewar.dir/libft/ft_strtrim.c.o"

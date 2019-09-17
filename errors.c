@@ -18,9 +18,9 @@ void error_no_file(char *argv) //if fd < 2!!!
 	exit (0);
 }
 
-void error_lexical(int str)
+void error_lexical(int y, int x)
 {
-	ft_printf("Lexical error at [%d]", str);
+	ft_printf("Lexical error at [%d:%d]", y + 1, x + 1);
 	exit (0);
 }
 

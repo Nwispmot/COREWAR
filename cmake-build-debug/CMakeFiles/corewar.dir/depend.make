@@ -221,6 +221,9 @@ CMakeFiles/corewar.dir/libft/ft_strrchr.c.o: ../libft/libft.h
 CMakeFiles/corewar.dir/libft/ft_strsplit.c.o: ../libft/ft_strsplit.c
 CMakeFiles/corewar.dir/libft/ft_strsplit.c.o: ../libft/libft.h
 
+CMakeFiles/corewar.dir/libft/ft_strsplit_n.c.o: ../libft/ft_strsplit_n.c
+CMakeFiles/corewar.dir/libft/ft_strsplit_n.c.o: ../libft/libft.h
+
 CMakeFiles/corewar.dir/libft/ft_strstr.c.o: ../libft/ft_strstr.c
 CMakeFiles/corewar.dir/libft/ft_strstr.c.o: ../libft/libft.h
 

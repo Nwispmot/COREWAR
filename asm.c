@@ -15,52 +15,64 @@ void	new_name_or_commit(char *str, t_parser *par) //add name and commit of champ
 {
 	int j;
 	int i;
+	int len;
 
 	i = 0;
+	len = -1;
 	while (str[i] != '"')
 		i++;
 	j = i + 1;
+	par->x += i + 2;
 	while (str[j] != '"')
 	{
-		if(str[j] == '\0')
+		while (str[j] == '\0')
 		{
 			par->y++;
-			str = ft_strjoin(str, par->file[par->y]);
+			str = ft_strjoin(ft_strjoin(str, "\n"),par->file[par->y]);
+			par->x = 1;
+			j++;
 		}
+		par->x++;
 		j++;
 	}
-//	if (str[j] == '\0'|| str[j + 1] != '\0')
-//	{
-//		ft_printf("empty");
-//		exit(0);
-//	}
-	if (ft_strncmp(NAME_CMD_STRING, str, 5) == 0 && (j - i) - 1 < PROG_NAME_LENGTH)
+	len += (j - i);
+	if (ft_strncmp(NAME_CMD_STRING, str, 5) == 0 && len <= PROG_NAME_LENGTH && par->name == NULL)
 		par->name = ft_strsub(str, i + 1, (j - i) - 1);
-	else if (ft_strncmp(COMMENT_CMD_STRING, str, 8) == 0 && (j - i) - 1 < COMMENT_LENGTH)
+	else if (ft_strncmp(COMMENT_CMD_STRING, str, 8) == 0 && len <= COMMENT_LENGTH && par->comment == NULL)
 		par->comment = ft_strsub(str, i + 1, (j - i) - 1);
-	else if (ft_strncmp(NAME_CMD_STRING, str, 5) != 0 && ft_strncmp(COMMENT_CMD_STRING, str, 8) != 0)
+	else
 	{
-		ft_printf("not");
+		error_lexical(par->y, par->x);
 		exit(0);
 	}
 }
 
-void	parse_asm(t_parser *par)
+void	parse_name_and_comment(t_parser *par)
 {
+	int flag;
 
-	while (par->file[par->y] != NULL)
+	flag = 0;
+	while (par->file[par->y] != NULL && (par->name == NULL || par->comment == NULL))
 	{
+		while ((par->file[par->y][par->x] == ' ' || par->file[par->y][par->x] == '\t') &&
+		par->file[par->y][par->x] != '\0')
+			par->x++;
 		if (par->file[par->y][par->x] == '\0' || par->file[par->y][par->x] == '#')
 		{
 			par->y++;
 			par->x = 0;
-			continue ;
+			flag = 0;
 		}
-		if (par->file[par->y][par->x] == '.')
+		else if (par->file[par->y][par->x] == '.' && !flag)
+		{
 			new_name_or_commit(&par->file[par->y][par->x], par);
-		par->x++;
-
+			flag = 1;
+		}
+		else
+			error_lexical(par->y, par->x);
 	}
+	if (par->name == NULL || par->comment == NULL)
+		print_error_file();
 }
 
 
@@ -83,9 +95,31 @@ void	read_file(t_parser *par)
 			file = ft_strjoin_free(file, line, 1, 0);
 		}
 	}
-	par->file = ft_strsplit(file, '\n');
+	par->file = ft_strsplit_n(file, '\n');
 	free(file);
 }
+//
+//void parse_token(t_parser *par)
+//{
+//	int flag;
+//
+//	flag = 0;
+//	while (par->file[par->y] != NULL)
+//	{
+//		while ((par->file[par->y][par->x] == ' ' || par->file[par->y][par->x] == '\t') &&
+//			   par->file[par->y][par->x] != '\0')
+//			par->x++;
+//		if (par->file[par->y][par->x] == '\0' || par->file[par->y][par->x] == '#')
+//		{
+//			par->y++;
+//			par->x = 0;
+//			continue ;
+//		}
+//		else if (par->file[par->y][par->x] == '.')
+//		else
+//			print_error_file();
+//	}
+//}
 
 int		main(int ac, char **av)
 {
@@ -99,8 +133,9 @@ int		main(int ac, char **av)
 		parser.fd = open(av[1], O_RDONLY);
 	}
 	read_file(&parser);
-	parse_asm(&parser);
+	parse_name_and_comment(&parser);
 	ft_printf("name ===  \"%s\"\n", parser.name);
 	ft_printf("comment ===  \"%s\"", parser.comment);
+//	parse_token(&parser);
 	exit(0);
 }

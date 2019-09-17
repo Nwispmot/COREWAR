@@ -2040,6 +2040,33 @@ libft/ft_strsplit.c.s:
 	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/libft/ft_strsplit.c.s
 .PHONY : libft/ft_strsplit.c.s
 
+libft/ft_strsplit_n.o: libft/ft_strsplit_n.c.o
+
+.PHONY : libft/ft_strsplit_n.o
+
+# target to build an object file
+libft/ft_strsplit_n.c.o:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/libft/ft_strsplit_n.c.o
+.PHONY : libft/ft_strsplit_n.c.o
+
+libft/ft_strsplit_n.i: libft/ft_strsplit_n.c.i
+
+.PHONY : libft/ft_strsplit_n.i
+
+# target to preprocess a source file
+libft/ft_strsplit_n.c.i:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/libft/ft_strsplit_n.c.i
+.PHONY : libft/ft_strsplit_n.c.i
+
+libft/ft_strsplit_n.s: libft/ft_strsplit_n.c.s
+
+.PHONY : libft/ft_strsplit_n.s
+
+# target to generate assembly for a file
+libft/ft_strsplit_n.c.s:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/libft/ft_strsplit_n.c.s
+.PHONY : libft/ft_strsplit_n.c.s
+
 libft/ft_strstr.o: libft/ft_strstr.c.o
 
 .PHONY : libft/ft_strstr.o
@@ -2775,6 +2802,9 @@ help:
 	@echo "... libft/ft_strsplit.o"
 	@echo "... libft/ft_strsplit.i"
 	@echo "... libft/ft_strsplit.s"
+	@echo "... libft/ft_strsplit_n.o"
+	@echo "... libft/ft_strsplit_n.i"
+	@echo "... libft/ft_strsplit_n.s"
 	@echo "... libft/ft_strstr.o"
 	@echo "... libft/ft_strstr.i"
 	@echo "... libft/ft_strstr.s"

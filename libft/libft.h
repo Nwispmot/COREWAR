@@ -109,5 +109,5 @@ char				*ft_strdup_free(const char *s1, char *str);
 int					ft_printf(char *string, ...);
 long long			ft_atol(const char *str);
 void				ft_swap(long *a, long *b);
-
+char			**ft_strsplit_n(char const *s, char c);
 #endif

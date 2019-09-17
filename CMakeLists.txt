@@ -77,6 +77,7 @@ add_executable(corewar
         libft/ft_strnstr.c
         libft/ft_strrchr.c
         libft/ft_strsplit.c
+        libft/ft_strsplit_n.c
         libft/ft_strstr.c
         libft/ft_strsub.c
         libft/ft_strtrim.c

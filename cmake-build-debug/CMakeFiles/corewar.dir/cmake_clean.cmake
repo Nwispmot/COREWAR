@@ -68,6 +68,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/corewar.dir/libft/ft_strnstr.c.o"
   "CMakeFiles/corewar.dir/libft/ft_strrchr.c.o"
   "CMakeFiles/corewar.dir/libft/ft_strsplit.c.o"
+  "CMakeFiles/corewar.dir/libft/ft_strsplit_n.c.o"
   "CMakeFiles/corewar.dir/libft/ft_strstr.c.o"
   "CMakeFiles/corewar.dir/libft/ft_strsub.c.o"
   "CMakeFiles/corewar.dir/libft/ft_strtrim.c.o"
