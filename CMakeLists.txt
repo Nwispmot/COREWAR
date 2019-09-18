@@ -78,6 +78,7 @@ add_executable(corewar
         libft/ft_strrchr.c
         libft/ft_strsplit.c
         libft/ft_strsplit_n.c
+        libft/ft_strsplit_tab_space.c
         libft/ft_strstr.c
         libft/ft_strsub.c
         libft/ft_strtrim.c
@@ -100,5 +101,6 @@ add_executable(corewar
         libft/unsigned.c
         libft/width.c
         asm.c
+        name_comment.c
         errors.c
         asm.h)

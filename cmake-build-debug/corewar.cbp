@@ -306,6 +306,9 @@
 		<Unit filename="/Users/nwispmot/Desktop/corewar/libft/ft_strsplit_n.c">
 			<Option target="corewar"/>
 		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/corewar/libft/ft_strsplit_tab_space.c">
+			<Option target="corewar"/>
+		</Unit>
 		<Unit filename="/Users/nwispmot/Desktop/corewar/libft/ft_strstr.c">
 			<Option target="corewar"/>
 		</Unit>
@@ -367,6 +370,9 @@
 			<Option target="corewar"/>
 		</Unit>
 		<Unit filename="/Users/nwispmot/Desktop/corewar/libft/width.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/corewar/name_comment.c">
 			<Option target="corewar"/>
 		</Unit>
 		<Unit filename="/Users/nwispmot/Desktop/corewar/CMakeLists.txt">

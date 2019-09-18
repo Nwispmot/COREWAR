@@ -76,6 +76,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/nwispmot/Desktop/corewar/libft/ft_strrchr.c" "/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles/corewar.dir/libft/ft_strrchr.c.o"
   "/Users/nwispmot/Desktop/corewar/libft/ft_strsplit.c" "/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles/corewar.dir/libft/ft_strsplit.c.o"
   "/Users/nwispmot/Desktop/corewar/libft/ft_strsplit_n.c" "/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles/corewar.dir/libft/ft_strsplit_n.c.o"
+  "/Users/nwispmot/Desktop/corewar/libft/ft_strsplit_tab_space.c" "/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles/corewar.dir/libft/ft_strsplit_tab_space.c.o"
   "/Users/nwispmot/Desktop/corewar/libft/ft_strstr.c" "/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles/corewar.dir/libft/ft_strstr.c.o"
   "/Users/nwispmot/Desktop/corewar/libft/ft_strsub.c" "/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles/corewar.dir/libft/ft_strsub.c.o"
   "/Users/nwispmot/Desktop/corewar/libft/ft_strtrim.c" "/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles/corewar.dir/libft/ft_strtrim.c.o"
@@ -95,6 +96,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/nwispmot/Desktop/corewar/libft/uhex.c" "/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles/corewar.dir/libft/uhex.c.o"
   "/Users/nwispmot/Desktop/corewar/libft/unsigned.c" "/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles/corewar.dir/libft/unsigned.c.o"
   "/Users/nwispmot/Desktop/corewar/libft/width.c" "/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles/corewar.dir/libft/width.c.o"
+  "/Users/nwispmot/Desktop/corewar/name_comment.c" "/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles/corewar.dir/name_comment.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

@@ -20,16 +20,34 @@ void error_no_file(char *argv) //if fd < 2!!!
 
 void error_lexical(int y, int x)
 {
-	ft_printf("Lexical error at [%d:%d]", y + 1, x + 1);
+	ft_printf("Lexical error at [%d:%d]\n", y + 1, x + 1);
 	exit (0);
 }
 
-//void error_syntax(int str, char *oper)
-//{
-//	ft_printf("Syntax error at token [TOKEN][%d] INSTRUCTION \"%s\"", str, oper);
-//	exit (0);
-//}
+void error_syntax(int y, int x)
+{
+	ft_printf("Syntax error at token [%d:%d]\n", y + 1, x + 1);
+	exit (0);
+}
 
 void error_exit(void) {
 	ft_printf("Error!!!!!!!!!");
+}
+
+void error_endline()
+{
+	ft_printf("Syntax error - unexpected end of input (Perhaps you forgot to end with a newline ?)");
+	exit(0);
+}
+
+void error_longname()
+{
+	ft_printf("Champion name too long (Max length 128)\n");
+	exit(0);
+}
+
+void error_longcomment()
+{
+	ft_printf("Champion comment too long (Max length 2048)\n");
+	exit(0);
 }

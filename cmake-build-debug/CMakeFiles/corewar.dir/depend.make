@@ -224,6 +224,9 @@ CMakeFiles/corewar.dir/libft/ft_strsplit.c.o: ../libft/libft.h
 CMakeFiles/corewar.dir/libft/ft_strsplit_n.c.o: ../libft/ft_strsplit_n.c
 CMakeFiles/corewar.dir/libft/ft_strsplit_n.c.o: ../libft/libft.h
 
+CMakeFiles/corewar.dir/libft/ft_strsplit_tab_space.c.o: ../libft/ft_strsplit_tab_space.c
+CMakeFiles/corewar.dir/libft/ft_strsplit_tab_space.c.o: ../libft/libft.h
+
 CMakeFiles/corewar.dir/libft/ft_strstr.c.o: ../libft/ft_strstr.c
 CMakeFiles/corewar.dir/libft/ft_strstr.c.o: ../libft/libft.h
 
@@ -289,4 +292,9 @@ CMakeFiles/corewar.dir/libft/unsigned.c.o: ../libft/unsigned.c
 CMakeFiles/corewar.dir/libft/width.c.o: ../libft/ft_printf.h
 CMakeFiles/corewar.dir/libft/width.c.o: ../libft/libft.h
 CMakeFiles/corewar.dir/libft/width.c.o: ../libft/width.c
+
+CMakeFiles/corewar.dir/name_comment.c.o: ../asm.h
+CMakeFiles/corewar.dir/name_comment.c.o: ../libft/libft.h
+CMakeFiles/corewar.dir/name_comment.c.o: ../name_comment.c
+CMakeFiles/corewar.dir/name_comment.c.o: ../op.h
 

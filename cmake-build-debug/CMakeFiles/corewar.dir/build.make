@@ -967,9 +967,22 @@ CMakeFiles/corewar.dir/libft/ft_strsplit_n.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/corewar.dir/libft/ft_strsplit_n.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/nwispmot/Desktop/corewar/libft/ft_strsplit_n.c -o CMakeFiles/corewar.dir/libft/ft_strsplit_n.c.s
 
+CMakeFiles/corewar.dir/libft/ft_strsplit_tab_space.c.o: CMakeFiles/corewar.dir/flags.make
+CMakeFiles/corewar.dir/libft/ft_strsplit_tab_space.c.o: ../libft/ft_strsplit_tab_space.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building C object CMakeFiles/corewar.dir/libft/ft_strsplit_tab_space.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar.dir/libft/ft_strsplit_tab_space.c.o   -c /Users/nwispmot/Desktop/corewar/libft/ft_strsplit_tab_space.c
+
+CMakeFiles/corewar.dir/libft/ft_strsplit_tab_space.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/corewar.dir/libft/ft_strsplit_tab_space.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/nwispmot/Desktop/corewar/libft/ft_strsplit_tab_space.c > CMakeFiles/corewar.dir/libft/ft_strsplit_tab_space.c.i
+
+CMakeFiles/corewar.dir/libft/ft_strsplit_tab_space.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/corewar.dir/libft/ft_strsplit_tab_space.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/nwispmot/Desktop/corewar/libft/ft_strsplit_tab_space.c -o CMakeFiles/corewar.dir/libft/ft_strsplit_tab_space.c.s
+
 CMakeFiles/corewar.dir/libft/ft_strstr.c.o: CMakeFiles/corewar.dir/flags.make
 CMakeFiles/corewar.dir/libft/ft_strstr.c.o: ../libft/ft_strstr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building C object CMakeFiles/corewar.dir/libft/ft_strstr.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building C object CMakeFiles/corewar.dir/libft/ft_strstr.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar.dir/libft/ft_strstr.c.o   -c /Users/nwispmot/Desktop/corewar/libft/ft_strstr.c
 
 CMakeFiles/corewar.dir/libft/ft_strstr.c.i: cmake_force
@@ -982,7 +995,7 @@ CMakeFiles/corewar.dir/libft/ft_strstr.c.s: cmake_force
 
 CMakeFiles/corewar.dir/libft/ft_strsub.c.o: CMakeFiles/corewar.dir/flags.make
 CMakeFiles/corewar.dir/libft/ft_strsub.c.o: ../libft/ft_strsub.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building C object CMakeFiles/corewar.dir/libft/ft_strsub.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building C object CMakeFiles/corewar.dir/libft/ft_strsub.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar.dir/libft/ft_strsub.c.o   -c /Users/nwispmot/Desktop/corewar/libft/ft_strsub.c
 
 CMakeFiles/corewar.dir/libft/ft_strsub.c.i: cmake_force
@@ -995,7 +1008,7 @@ CMakeFiles/corewar.dir/libft/ft_strsub.c.s: cmake_force
 
 CMakeFiles/corewar.dir/libft/ft_strtrim.c.o: CMakeFiles/corewar.dir/flags.make
 CMakeFiles/corewar.dir/libft/ft_strtrim.c.o: ../libft/ft_strtrim.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building C object CMakeFiles/corewar.dir/libft/ft_strtrim.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building C object CMakeFiles/corewar.dir/libft/ft_strtrim.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar.dir/libft/ft_strtrim.c.o   -c /Users/nwispmot/Desktop/corewar/libft/ft_strtrim.c
 
 CMakeFiles/corewar.dir/libft/ft_strtrim.c.i: cmake_force
@@ -1008,7 +1021,7 @@ CMakeFiles/corewar.dir/libft/ft_strtrim.c.s: cmake_force
 
 CMakeFiles/corewar.dir/libft/ft_swap.c.o: CMakeFiles/corewar.dir/flags.make
 CMakeFiles/corewar.dir/libft/ft_swap.c.o: ../libft/ft_swap.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building C object CMakeFiles/corewar.dir/libft/ft_swap.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building C object CMakeFiles/corewar.dir/libft/ft_swap.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar.dir/libft/ft_swap.c.o   -c /Users/nwispmot/Desktop/corewar/libft/ft_swap.c
 
 CMakeFiles/corewar.dir/libft/ft_swap.c.i: cmake_force
@@ -1021,7 +1034,7 @@ CMakeFiles/corewar.dir/libft/ft_swap.c.s: cmake_force
 
 CMakeFiles/corewar.dir/libft/ft_swap_d.c.o: CMakeFiles/corewar.dir/flags.make
 CMakeFiles/corewar.dir/libft/ft_swap_d.c.o: ../libft/ft_swap_d.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building C object CMakeFiles/corewar.dir/libft/ft_swap_d.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building C object CMakeFiles/corewar.dir/libft/ft_swap_d.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar.dir/libft/ft_swap_d.c.o   -c /Users/nwispmot/Desktop/corewar/libft/ft_swap_d.c
 
 CMakeFiles/corewar.dir/libft/ft_swap_d.c.i: cmake_force
@@ -1034,7 +1047,7 @@ CMakeFiles/corewar.dir/libft/ft_swap_d.c.s: cmake_force
 
 CMakeFiles/corewar.dir/libft/ft_tolower.c.o: CMakeFiles/corewar.dir/flags.make
 CMakeFiles/corewar.dir/libft/ft_tolower.c.o: ../libft/ft_tolower.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building C object CMakeFiles/corewar.dir/libft/ft_tolower.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Building C object CMakeFiles/corewar.dir/libft/ft_tolower.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar.dir/libft/ft_tolower.c.o   -c /Users/nwispmot/Desktop/corewar/libft/ft_tolower.c
 
 CMakeFiles/corewar.dir/libft/ft_tolower.c.i: cmake_force
@@ -1047,7 +1060,7 @@ CMakeFiles/corewar.dir/libft/ft_tolower.c.s: cmake_force
 
 CMakeFiles/corewar.dir/libft/ft_toupper.c.o: CMakeFiles/corewar.dir/flags.make
 CMakeFiles/corewar.dir/libft/ft_toupper.c.o: ../libft/ft_toupper.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Building C object CMakeFiles/corewar.dir/libft/ft_toupper.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Building C object CMakeFiles/corewar.dir/libft/ft_toupper.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar.dir/libft/ft_toupper.c.o   -c /Users/nwispmot/Desktop/corewar/libft/ft_toupper.c
 
 CMakeFiles/corewar.dir/libft/ft_toupper.c.i: cmake_force
@@ -1060,7 +1073,7 @@ CMakeFiles/corewar.dir/libft/ft_toupper.c.s: cmake_force
 
 CMakeFiles/corewar.dir/libft/ft_utoa.c.o: CMakeFiles/corewar.dir/flags.make
 CMakeFiles/corewar.dir/libft/ft_utoa.c.o: ../libft/ft_utoa.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Building C object CMakeFiles/corewar.dir/libft/ft_utoa.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Building C object CMakeFiles/corewar.dir/libft/ft_utoa.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar.dir/libft/ft_utoa.c.o   -c /Users/nwispmot/Desktop/corewar/libft/ft_utoa.c
 
 CMakeFiles/corewar.dir/libft/ft_utoa.c.i: cmake_force
@@ -1073,7 +1086,7 @@ CMakeFiles/corewar.dir/libft/ft_utoa.c.s: cmake_force
 
 CMakeFiles/corewar.dir/libft/ftoa.c.o: CMakeFiles/corewar.dir/flags.make
 CMakeFiles/corewar.dir/libft/ftoa.c.o: ../libft/ftoa.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Building C object CMakeFiles/corewar.dir/libft/ftoa.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building C object CMakeFiles/corewar.dir/libft/ftoa.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar.dir/libft/ftoa.c.o   -c /Users/nwispmot/Desktop/corewar/libft/ftoa.c
 
 CMakeFiles/corewar.dir/libft/ftoa.c.i: cmake_force
@@ -1086,7 +1099,7 @@ CMakeFiles/corewar.dir/libft/ftoa.c.s: cmake_force
 
 CMakeFiles/corewar.dir/libft/get_next_line.c.o: CMakeFiles/corewar.dir/flags.make
 CMakeFiles/corewar.dir/libft/get_next_line.c.o: ../libft/get_next_line.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building C object CMakeFiles/corewar.dir/libft/get_next_line.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Building C object CMakeFiles/corewar.dir/libft/get_next_line.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar.dir/libft/get_next_line.c.o   -c /Users/nwispmot/Desktop/corewar/libft/get_next_line.c
 
 CMakeFiles/corewar.dir/libft/get_next_line.c.i: cmake_force
@@ -1099,7 +1112,7 @@ CMakeFiles/corewar.dir/libft/get_next_line.c.s: cmake_force
 
 CMakeFiles/corewar.dir/libft/int_dec.c.o: CMakeFiles/corewar.dir/flags.make
 CMakeFiles/corewar.dir/libft/int_dec.c.o: ../libft/int_dec.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Building C object CMakeFiles/corewar.dir/libft/int_dec.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Building C object CMakeFiles/corewar.dir/libft/int_dec.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar.dir/libft/int_dec.c.o   -c /Users/nwispmot/Desktop/corewar/libft/int_dec.c
 
 CMakeFiles/corewar.dir/libft/int_dec.c.i: cmake_force
@@ -1112,7 +1125,7 @@ CMakeFiles/corewar.dir/libft/int_dec.c.s: cmake_force
 
 CMakeFiles/corewar.dir/libft/lhex.c.o: CMakeFiles/corewar.dir/flags.make
 CMakeFiles/corewar.dir/libft/lhex.c.o: ../libft/lhex.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Building C object CMakeFiles/corewar.dir/libft/lhex.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Building C object CMakeFiles/corewar.dir/libft/lhex.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar.dir/libft/lhex.c.o   -c /Users/nwispmot/Desktop/corewar/libft/lhex.c
 
 CMakeFiles/corewar.dir/libft/lhex.c.i: cmake_force
@@ -1125,7 +1138,7 @@ CMakeFiles/corewar.dir/libft/lhex.c.s: cmake_force
 
 CMakeFiles/corewar.dir/libft/octal.c.o: CMakeFiles/corewar.dir/flags.make
 CMakeFiles/corewar.dir/libft/octal.c.o: ../libft/octal.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Building C object CMakeFiles/corewar.dir/libft/octal.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Building C object CMakeFiles/corewar.dir/libft/octal.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar.dir/libft/octal.c.o   -c /Users/nwispmot/Desktop/corewar/libft/octal.c
 
 CMakeFiles/corewar.dir/libft/octal.c.i: cmake_force
@@ -1138,7 +1151,7 @@ CMakeFiles/corewar.dir/libft/octal.c.s: cmake_force
 
 CMakeFiles/corewar.dir/libft/parse.c.o: CMakeFiles/corewar.dir/flags.make
 CMakeFiles/corewar.dir/libft/parse.c.o: ../libft/parse.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Building C object CMakeFiles/corewar.dir/libft/parse.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Building C object CMakeFiles/corewar.dir/libft/parse.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar.dir/libft/parse.c.o   -c /Users/nwispmot/Desktop/corewar/libft/parse.c
 
 CMakeFiles/corewar.dir/libft/parse.c.i: cmake_force
@@ -1151,7 +1164,7 @@ CMakeFiles/corewar.dir/libft/parse.c.s: cmake_force
 
 CMakeFiles/corewar.dir/libft/percent_sharp.c.o: CMakeFiles/corewar.dir/flags.make
 CMakeFiles/corewar.dir/libft/percent_sharp.c.o: ../libft/percent_sharp.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Building C object CMakeFiles/corewar.dir/libft/percent_sharp.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Building C object CMakeFiles/corewar.dir/libft/percent_sharp.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar.dir/libft/percent_sharp.c.o   -c /Users/nwispmot/Desktop/corewar/libft/percent_sharp.c
 
 CMakeFiles/corewar.dir/libft/percent_sharp.c.i: cmake_force
@@ -1164,7 +1177,7 @@ CMakeFiles/corewar.dir/libft/percent_sharp.c.s: cmake_force
 
 CMakeFiles/corewar.dir/libft/pointer.c.o: CMakeFiles/corewar.dir/flags.make
 CMakeFiles/corewar.dir/libft/pointer.c.o: ../libft/pointer.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Building C object CMakeFiles/corewar.dir/libft/pointer.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Building C object CMakeFiles/corewar.dir/libft/pointer.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar.dir/libft/pointer.c.o   -c /Users/nwispmot/Desktop/corewar/libft/pointer.c
 
 CMakeFiles/corewar.dir/libft/pointer.c.i: cmake_force
@@ -1177,7 +1190,7 @@ CMakeFiles/corewar.dir/libft/pointer.c.s: cmake_force
 
 CMakeFiles/corewar.dir/libft/uhex.c.o: CMakeFiles/corewar.dir/flags.make
 CMakeFiles/corewar.dir/libft/uhex.c.o: ../libft/uhex.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Building C object CMakeFiles/corewar.dir/libft/uhex.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_88) "Building C object CMakeFiles/corewar.dir/libft/uhex.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar.dir/libft/uhex.c.o   -c /Users/nwispmot/Desktop/corewar/libft/uhex.c
 
 CMakeFiles/corewar.dir/libft/uhex.c.i: cmake_force
@@ -1190,7 +1203,7 @@ CMakeFiles/corewar.dir/libft/uhex.c.s: cmake_force
 
 CMakeFiles/corewar.dir/libft/unsigned.c.o: CMakeFiles/corewar.dir/flags.make
 CMakeFiles/corewar.dir/libft/unsigned.c.o: ../libft/unsigned.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_88) "Building C object CMakeFiles/corewar.dir/libft/unsigned.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_89) "Building C object CMakeFiles/corewar.dir/libft/unsigned.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar.dir/libft/unsigned.c.o   -c /Users/nwispmot/Desktop/corewar/libft/unsigned.c
 
 CMakeFiles/corewar.dir/libft/unsigned.c.i: cmake_force
@@ -1203,7 +1216,7 @@ CMakeFiles/corewar.dir/libft/unsigned.c.s: cmake_force
 
 CMakeFiles/corewar.dir/libft/width.c.o: CMakeFiles/corewar.dir/flags.make
 CMakeFiles/corewar.dir/libft/width.c.o: ../libft/width.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_89) "Building C object CMakeFiles/corewar.dir/libft/width.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_90) "Building C object CMakeFiles/corewar.dir/libft/width.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar.dir/libft/width.c.o   -c /Users/nwispmot/Desktop/corewar/libft/width.c
 
 CMakeFiles/corewar.dir/libft/width.c.i: cmake_force
@@ -1216,7 +1229,7 @@ CMakeFiles/corewar.dir/libft/width.c.s: cmake_force
 
 CMakeFiles/corewar.dir/asm.c.o: CMakeFiles/corewar.dir/flags.make
 CMakeFiles/corewar.dir/asm.c.o: ../asm.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_90) "Building C object CMakeFiles/corewar.dir/asm.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_91) "Building C object CMakeFiles/corewar.dir/asm.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar.dir/asm.c.o   -c /Users/nwispmot/Desktop/corewar/asm.c
 
 CMakeFiles/corewar.dir/asm.c.i: cmake_force
@@ -1227,9 +1240,22 @@ CMakeFiles/corewar.dir/asm.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/corewar.dir/asm.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/nwispmot/Desktop/corewar/asm.c -o CMakeFiles/corewar.dir/asm.c.s
 
+CMakeFiles/corewar.dir/name_comment.c.o: CMakeFiles/corewar.dir/flags.make
+CMakeFiles/corewar.dir/name_comment.c.o: ../name_comment.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_92) "Building C object CMakeFiles/corewar.dir/name_comment.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar.dir/name_comment.c.o   -c /Users/nwispmot/Desktop/corewar/name_comment.c
+
+CMakeFiles/corewar.dir/name_comment.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/corewar.dir/name_comment.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/nwispmot/Desktop/corewar/name_comment.c > CMakeFiles/corewar.dir/name_comment.c.i
+
+CMakeFiles/corewar.dir/name_comment.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/corewar.dir/name_comment.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/nwispmot/Desktop/corewar/name_comment.c -o CMakeFiles/corewar.dir/name_comment.c.s
+
 CMakeFiles/corewar.dir/errors.c.o: CMakeFiles/corewar.dir/flags.make
 CMakeFiles/corewar.dir/errors.c.o: ../errors.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_91) "Building C object CMakeFiles/corewar.dir/errors.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_93) "Building C object CMakeFiles/corewar.dir/errors.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar.dir/errors.c.o   -c /Users/nwispmot/Desktop/corewar/errors.c
 
 CMakeFiles/corewar.dir/errors.c.i: cmake_force
@@ -1312,6 +1338,7 @@ corewar_OBJECTS = \
 "CMakeFiles/corewar.dir/libft/ft_strrchr.c.o" \
 "CMakeFiles/corewar.dir/libft/ft_strsplit.c.o" \
 "CMakeFiles/corewar.dir/libft/ft_strsplit_n.c.o" \
+"CMakeFiles/corewar.dir/libft/ft_strsplit_tab_space.c.o" \
 "CMakeFiles/corewar.dir/libft/ft_strstr.c.o" \
 "CMakeFiles/corewar.dir/libft/ft_strsub.c.o" \
 "CMakeFiles/corewar.dir/libft/ft_strtrim.c.o" \
@@ -1332,6 +1359,7 @@ corewar_OBJECTS = \
 "CMakeFiles/corewar.dir/libft/unsigned.c.o" \
 "CMakeFiles/corewar.dir/libft/width.c.o" \
 "CMakeFiles/corewar.dir/asm.c.o" \
+"CMakeFiles/corewar.dir/name_comment.c.o" \
 "CMakeFiles/corewar.dir/errors.c.o"
 
 # External object files for target corewar
@@ -1407,6 +1435,7 @@ corewar: CMakeFiles/corewar.dir/libft/ft_strnstr.c.o
 corewar: CMakeFiles/corewar.dir/libft/ft_strrchr.c.o
 corewar: CMakeFiles/corewar.dir/libft/ft_strsplit.c.o
 corewar: CMakeFiles/corewar.dir/libft/ft_strsplit_n.c.o
+corewar: CMakeFiles/corewar.dir/libft/ft_strsplit_tab_space.c.o
 corewar: CMakeFiles/corewar.dir/libft/ft_strstr.c.o
 corewar: CMakeFiles/corewar.dir/libft/ft_strsub.c.o
 corewar: CMakeFiles/corewar.dir/libft/ft_strtrim.c.o
@@ -1427,10 +1456,11 @@ corewar: CMakeFiles/corewar.dir/libft/uhex.c.o
 corewar: CMakeFiles/corewar.dir/libft/unsigned.c.o
 corewar: CMakeFiles/corewar.dir/libft/width.c.o
 corewar: CMakeFiles/corewar.dir/asm.c.o
+corewar: CMakeFiles/corewar.dir/name_comment.c.o
 corewar: CMakeFiles/corewar.dir/errors.c.o
 corewar: CMakeFiles/corewar.dir/build.make
 corewar: CMakeFiles/corewar.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_92) "Linking C executable corewar"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/nwispmot/Desktop/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_94) "Linking C executable corewar"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/corewar.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

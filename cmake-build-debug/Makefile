@@ -2067,6 +2067,33 @@ libft/ft_strsplit_n.c.s:
 	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/libft/ft_strsplit_n.c.s
 .PHONY : libft/ft_strsplit_n.c.s
 
+libft/ft_strsplit_tab_space.o: libft/ft_strsplit_tab_space.c.o
+
+.PHONY : libft/ft_strsplit_tab_space.o
+
+# target to build an object file
+libft/ft_strsplit_tab_space.c.o:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/libft/ft_strsplit_tab_space.c.o
+.PHONY : libft/ft_strsplit_tab_space.c.o
+
+libft/ft_strsplit_tab_space.i: libft/ft_strsplit_tab_space.c.i
+
+.PHONY : libft/ft_strsplit_tab_space.i
+
+# target to preprocess a source file
+libft/ft_strsplit_tab_space.c.i:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/libft/ft_strsplit_tab_space.c.i
+.PHONY : libft/ft_strsplit_tab_space.c.i
+
+libft/ft_strsplit_tab_space.s: libft/ft_strsplit_tab_space.c.s
+
+.PHONY : libft/ft_strsplit_tab_space.s
+
+# target to generate assembly for a file
+libft/ft_strsplit_tab_space.c.s:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/libft/ft_strsplit_tab_space.c.s
+.PHONY : libft/ft_strsplit_tab_space.c.s
+
 libft/ft_strstr.o: libft/ft_strstr.c.o
 
 .PHONY : libft/ft_strstr.o
@@ -2580,6 +2607,33 @@ libft/width.c.s:
 	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/libft/width.c.s
 .PHONY : libft/width.c.s
 
+name_comment.o: name_comment.c.o
+
+.PHONY : name_comment.o
+
+# target to build an object file
+name_comment.c.o:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/name_comment.c.o
+.PHONY : name_comment.c.o
+
+name_comment.i: name_comment.c.i
+
+.PHONY : name_comment.i
+
+# target to preprocess a source file
+name_comment.c.i:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/name_comment.c.i
+.PHONY : name_comment.c.i
+
+name_comment.s: name_comment.c.s
+
+.PHONY : name_comment.s
+
+# target to generate assembly for a file
+name_comment.c.s:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/name_comment.c.s
+.PHONY : name_comment.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -2805,6 +2859,9 @@ help:
 	@echo "... libft/ft_strsplit_n.o"
 	@echo "... libft/ft_strsplit_n.i"
 	@echo "... libft/ft_strsplit_n.s"
+	@echo "... libft/ft_strsplit_tab_space.o"
+	@echo "... libft/ft_strsplit_tab_space.i"
+	@echo "... libft/ft_strsplit_tab_space.s"
 	@echo "... libft/ft_strstr.o"
 	@echo "... libft/ft_strstr.i"
 	@echo "... libft/ft_strstr.s"
@@ -2862,6 +2919,9 @@ help:
 	@echo "... libft/width.o"
 	@echo "... libft/width.i"
 	@echo "... libft/width.s"
+	@echo "... name_comment.o"
+	@echo "... name_comment.i"
+	@echo "... name_comment.s"
 .PHONY : help
 
 

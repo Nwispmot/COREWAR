@@ -110,4 +110,6 @@ int					ft_printf(char *string, ...);
 long long			ft_atol(const char *str);
 void				ft_swap(long *a, long *b);
 char			**ft_strsplit_n(char const *s, char c);
+char			**ft_strsplit_tab_space(char const *s, char c, char a);
+
 #endif
