@@ -21,6 +21,7 @@ void	check_file_name(char *str, t_parser *par)
 		print_error_file();
 	par->file_name = ft_strnew(i - 2);
 	ft_strncpy(par->file_name, str, i - 1);
+	par->file_name = ft_strjoin_free(par->file_name, ".cor", 1, 0);
 }
 
 void	quotes(char *str, int *i1, int *j1, t_parser *par)
@@ -102,4 +103,26 @@ void	parse_name_and_comment(t_parser *par)
 		else
 			error_syntax(par->y, par->x);
 	}
+}
+
+void	read_file(t_parser *par)
+{
+	char *line;
+	char *file;
+
+	file = NULL;
+	while (get_next_line(par->fd, &line) > 0)
+	{
+		if (!file)
+		{
+			file = ft_strdup(line);
+		}
+		else
+		{
+			file = ft_strjoin(file, "\n");
+			file = ft_strjoin_free(file, line, 1, 0);
+		}
+	}
+	par->file = ft_strsplit_n(file, '\n');
+	free(file);
 }

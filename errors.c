@@ -51,3 +51,9 @@ void error_longcomment()
 	ft_printf("Champion comment too long (Max length 2048)\n");
 	exit(0);
 }
+
+void error_param()
+{
+    ft_printf("Invalid parameter count for instruction \n");
+    exit(0);
+}
