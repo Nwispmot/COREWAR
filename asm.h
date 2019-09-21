@@ -5,31 +5,45 @@
 #include "op.h"
 #include "op_struct.h"
 
-typedef enum e_type
+typedef enum
 {
-	REG = 1,
-	INDIR,
-	DIR,
-	LABEL_DIR,
-	LABEL_INDIR
-}						t_type;
+	COMMAND,
+	STRING,
+	LABEL,
+	OPERATOR,
+	REGISTER,
+	DIRECT,
+	DIRECT_LABEL,
+	INDIRECT,
+	INDIRECT_LABEL,
+	SEPARATOR,
+	NEW_LINE,
+	END
+}	t_type;
+
+//static char				*g_type[] = {
+//		"COMMAND",
+//		"STRING",
+//		"LABEL",
+//		"OPERATOR",
+//		"REGISTER",
+//		"DIRECT",
+//		"DIRECT_LABEL",
+//		"INDIRECT",
+//		"INDIRECT_LABEL",
+//		"SEPARATOR",
+//		"NEW_LINE",
+//		"END"
+//};
 
 typedef struct			s_token
 {
-	t_type				* type;
-	int 				oeration;
+	char				*content;
+	t_type				type;
+	unsigned			row;
+	unsigned			column;
 	struct s_token		*next;
-	struct s_token		*prev;
-
 }						t_token;
-
-typedef struct			s_label
-{
-	char				*label;
-	t_token				*point;
-	struct s_label		*next;
-	struct s_label		*prev;
-}						t_label;
 
 typedef	struct		s_parser
 {
@@ -40,7 +54,7 @@ typedef	struct		s_parser
 	char 			*name;
 	char 			*comment;
 	char 			**file;
-	t_label			*labels;
+	//t_label			*labels;
 	t_token			*tokens;
 
 }					t_parser;

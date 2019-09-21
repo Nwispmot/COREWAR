@@ -1,40 +1,71 @@
 #include "asm.h"
 
-void	add_label(t_parser *par, char *str, int len)
-{
-	t_label *fresh;
-	t_label *head;
+//void	add_label(t_parser *par, char *str, int len)
+//{
+//	t_label *fresh;
+//	t_label *head;
+//
+//	head = par->labels;
+//	if (!par->labels)
+//	{
+//		par->labels = (t_label*)malloc(sizeof(t_label));
+//		par->labels->label = ft_strsub(str, 0, len);
+//		par->labels->next = NULL;
+//		par->labels->prev = NULL;
+//	}
+//	else
+//	{
+//		fresh = (t_label*)malloc(sizeof(t_label));
+//		fresh->label = ft_strsub(str, 0, len);
+//		fresh->next = NULL;
+//
+//		while(head->next)
+//		{
+//			if (ft_strcmp(head->label, fresh->label) == 0)
+//			{
+//				free(fresh);
+//				return ;
+//			}
+//			head = head->next;
+//		}
+//		if (ft_strcmp(head->label, fresh->label) == 0)
+//		{
+//			free(fresh);
+//			return ;
+//		}
+//		fresh->prev = head;
+//		head->next = fresh;
+//	}
+//}
 
-	head = par->labels;
-	if (!par->labels)
+void    add_token(t_parser *par, t_type type, char *content)
+{
+	t_token	*new;
+	t_token	*head;
+
+	if (!par->tokens)
 	{
-		par->labels = (t_label*)malloc(sizeof(t_label));
-		par->labels->label = ft_strsub(str, 0, len);
-		par->labels->next = NULL;
-		par->labels->prev = NULL;
+		par->tokens = (t_token*)malloc(sizeof(t_token));
+		ft_bzero(par->tokens, sizeof(t_token));
+		par->tokens->type = type;
+		if (content)
+			par->tokens->content = ft_strdup(content);
+		par->tokens->next = NULL;
 	}
 	else
 	{
-		fresh = (t_label*)malloc(sizeof(t_label));
-		fresh->label = ft_strsub(str, 0, len);
-		fresh->next = NULL;
-
-		while(head->next)
+		head = par->tokens;
+		while (head->next)
 		{
-			if (ft_strcmp(head->label, fresh->label) == 0)
-			{
-				free(fresh);
-				return ;
-			}
 			head = head->next;
 		}
-		if (ft_strcmp(head->label, fresh->label) == 0)
-		{
-			free(fresh);
-			return ;
-		}
-		fresh->prev = head;
-		head->next = fresh;
+		new = (t_token*)malloc(sizeof(t_token));
+		ft_bzero(new, sizeof(t_token));
+		new->type = type;
+		if (content)
+			new->content = ft_strdup(content);
+		new->next = NULL;
+		head->next = new;
 	}
 }
 
@@ -50,24 +81,12 @@ int		is_label(char *str, t_parser *par)
 		while(++i < len)
 			if (ft_strchr(LABEL_CHARS, str[i]) == NULL)
 				error_lexical(par->y, i);
-		add_label(par, str, len);
+//		add_label(par, str, len);
 		return (1);
 	}
 	else
 		return (0);
 }
-
-//void	add_token(t_parser *par)
-//{
-//	t_token	*new;
-//
-//	if (!par->tokens)
-//	{
-//		par->tokens = (t_token*)malloc(sizeof(t_token));
-//		par->tokens->next = NULL;
-//		par->tokens->prev = NULL;
-//	}
-//}
 
 void    check_args(char *string, int oper)
 {
@@ -97,6 +116,7 @@ void    is_operation(char **split, t_parser *par)
     {
         if (ft_strcmp(op[oper].name, split[i]) == 0)
         {
+        	add_token(par, OPERATOR, split[i]);
             i++;
             check_args(split[i], oper);
             ft_printf("%s\n", op[oper].name);
@@ -115,26 +135,31 @@ void	new_token(t_parser *par)
 
 	flag = 1;
 	i = 0;
-	//add_token();
 	split = ft_strsplit_tab_space(par->file[par->y], ' ', '\t');
 	while(flag)
 	{
 		flag = 0;
 		if (is_label(split[i], par))
-			i++;
+        {
+		    add_token(par, LABEL, split[i]);
+		    par->x += ft_strlen(split[i]);
+		    i++;
+        }
 		if (!split[i])
 		{
 			par->y++;
+			par->x = 0;
 			if (par->file[par->y] == NULL)
 				error_syntax(par->y, par->x);
 			flag = 1;
 			i = 0;
 			split = ft_strsplit_tab_space(par->file[par->y], ' ', '\t');
-//			parse_token(par);
 		}
 	}
 	is_operation(&split[i], par);
 	par->y++;
+	add_token(par, NEW_LINE, NULL);
+	par->x = 0;
 //	if (!par->file[par->y])
 //		error_endline();
 }
@@ -187,10 +212,11 @@ int		main(int ac, char **av)
 	}
 	//INDIR
 	ft_printf("\n");
-	for (int i = 1;parser.labels;i++)
+	for (int i = 6;parser.tokens;i++)
 	{
-		ft_printf("%d %s\n", i, parser.labels->label);
-		parser.labels = parser.labels->next;
+		if(parser.tokens->type == LABEL)
+			ft_printf("%s\n", parser.tokens->content);
+		parser.tokens = parser.tokens->next;
 	}
 	ft_printf("%s\n", parser.file_name);
 //	ft_printf("%s", );
