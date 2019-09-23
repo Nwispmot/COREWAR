@@ -51,6 +51,7 @@ typedef	struct		s_parser
 	int 			y;
 	char			*file_name;
 	int             fd;
+	int             oper;
 	char 			*name;
 	char 			*comment;
 	char 			**file;

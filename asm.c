@@ -69,6 +69,38 @@ void    add_token(t_parser *par, t_type type, char *content)
 	}
 }
 
+void    add_label_token(t_parser *par, char *content)
+{
+	t_token	*new;
+	t_token	*head;
+
+	if (!par->tokens)
+	{
+		par->tokens = (t_token*)malloc(sizeof(t_token));
+		ft_bzero(par->tokens, sizeof(t_token));
+		par->tokens->type = LABEL;
+		par->tokens->row = par->y;
+		if (content)
+			par->tokens->content = ft_strsub(content, 0, ft_strlen(content) - 1);
+		par->tokens->next = NULL;
+	}
+	else
+	{
+		head = par->tokens;
+		while (head->next)
+		{
+			head = head->next;
+		}
+		new = (t_token*)malloc(sizeof(t_token));
+		ft_bzero(new, sizeof(t_token));
+		new->type = LABEL;
+		if (content)
+			new->content = ft_strdup(content);
+		new->next = NULL;
+		head->next = new;
+	}
+}
+
 int		is_label(char *str, t_parser *par)
 {
 	int i;
@@ -88,78 +120,189 @@ int		is_label(char *str, t_parser *par)
 		return (0);
 }
 
-void    check_args(char *string, int oper)
+void	is_registry(char *string, t_parser *par)
 {
-    char **split;
-    int i;
-    int len;
+	int i;
 
-    i = 0;
-    len = 0;
-    split = ft_strsplit(string, SEPARATOR_CHAR);
-    while (split[len])
-        len++;
-    if (len != op[oper].args_num)
-        error_param();
+	i = 1;
+	if(!(ft_isalnum(string[0]) && (ft_isalnum(string[1]) || string[1] == ' '
+	|| string[1] == '\t' || string[1] == '\0')))
+		error_lexical(par->y, par->x);
+	while(string[i] != '\0' && string[++i])
+		if (string[i] != '\t' && string[i] != ' ')
+			error_lexical(par->y, par->x + i);
+	add_token(par, REGISTER, string);
 }
 
-void    is_operation(char **split, t_parser *par)
+void is_indir_dir_label(char *string, t_parser *par, t_type type)
+{
+	int i;
+
+	i = -1;
+	while(string[++i])
+		if (ft_strchr(LABEL_CHARS, string[i]) == NULL)
+			error_lexical(par->y, i);
+	add_token(par, type, string);
+}
+
+void is_dir_or_indir(char *string, t_parser *par, t_type type)
+{
+	int i;
+
+	i = -1;
+	if(string[0] == '-')
+		i = 0;
+	if(string[0] == LABEL_CHAR && type == DIRECT)
+		is_indir_dir_label(&string[1], par, DIRECT_LABEL);
+	else
+	{
+		while (string[++i] && string[i] != ' ' && string[i] != '\t')
+			if (ft_isalnum(string[i]) == 0)
+				error_lexical(par->y, par->x + i);
+		while (string[i] != '\0' && string[++i])
+			if (string[i] != '\t' && string[i] != ' ')
+				error_lexical(par->y, par->x + i);
+		add_token(par, type, string);
+	}
+}
+
+void    check_args(char *string, t_parser *par)
+{
+	int i;
+
+	i = 0;
+	while ((string[i] == ' ' || string[i] == '\t') && par->file[par->y][i])
+		i++;
+	if (string[i] == REG_CHAR)
+		is_registry(&string[++i], par);
+	else if (string[i] == DIRECT_CHAR)
+		is_dir_or_indir(&string[++i], par, DIRECT);
+	else if (ft_isalnum(string[i]))
+		is_dir_or_indir(&string[i], par, INDIRECT);
+	else if (string[i] == LABEL_CHAR)
+		is_indir_dir_label(&string[++i], par, INDIRECT_LABEL);
+	else
+		error_lexical(par->y, par->x);
+}
+
+void    is_operation(char *str, t_parser *par)
 {
     int oper;
     int i;
 
     oper = 0;
     i = 0;
-    if(!split)
+    if(!str)
         error_lexical(par->y, par->x);
     while (op[oper].name != NULL)
     {
-        if (ft_strcmp(op[oper].name, split[i]) == 0)
+        if (ft_strcmp(op[oper].name, str) == 0)
         {
-        	add_token(par, OPERATOR, split[i]);
-            i++;
-            check_args(split[i], oper);
-            ft_printf("%s\n", op[oper].name);
-            return ;
+        	add_token(par, OPERATOR, str);
+        	par->oper = oper;
+			ft_printf("%s\n", op[oper].name);
+			return ;
         }
         oper++;
     }
     error_endline();
 }
 
+int    label_or_comand(char *str, t_parser *par)
+{
+    if (is_label(str, par))
+    {
+		add_label_token(par, str);
+		return (1);
+	}
+    else
+	{
+		is_operation(str, par);
+		return (0);
+	}
+}
+
+void	parse_args(t_parser *par)
+{
+	char	*string;
+	int		i;
+	int		flag;
+
+	i = par->x;
+	flag = 1;
+//	while(flag)
+//	{
+	while(par->file[par->y][par->x] != '\0')
+	{
+		while (par->file[par->y][i] != SEPARATOR_CHAR && par->file[par->y][i])
+			i++;
+		string = ft_strsub(par->file[par->y], par->x, i - par->x);
+		check_args(string, par);
+		i++;
+		while ((par->file[par->y][i] == ' ' || par->file[par->y][i] == '\t') && par->file[par->y][i]) {
+			i++;
+		}
+		par->x = i;
+		ft_strdel(&string);
+	}
+	par->x = 0;
+	par->y++;
+	add_token(par, NEW_LINE, NULL);
+}
+
 void	new_token(t_parser *par)
 {
-	char 	**split;
-	int 	i;
+	char	*string;
+	int		i;
 	int		flag;
 
 	flag = 1;
-	i = 0;
-	split = ft_strsplit_tab_space(par->file[par->y], ' ', '\t');
+	while ((par->file[par->y][par->x] == '\t' || par->file[par->y][par->x] == ' ') && par->file[par->y][par->x] != '\0')
+		par->x++;
+	i = par->x;
 	while(flag)
 	{
-		flag = 0;
-		if (is_label(split[i], par))
-        {
-		    add_token(par, LABEL, split[i]);
-		    par->x += ft_strlen(split[i]);
-		    i++;
-        }
-		if (!split[i])
-		{
-			par->y++;
-			par->x = 0;
-			if (par->file[par->y] == NULL)
-				error_syntax(par->y, par->x);
-			flag = 1;
-			i = 0;
-			split = ft_strsplit_tab_space(par->file[par->y], ' ', '\t');
-		}
+		while (par->file[par->y][i] != ' ' && par->file[par->y][i] != '\t' && par->file[par->y][i])
+			i++;
+		string = ft_strsub(par->file[par->y], par->x, i - par->x);
+		flag = label_or_comand(string, par);
+		while ((par->file[par->y][i] == ' ' || par->file[par->y][i] == '\t') && par->file[par->y][i])
+			i++;
+		par->x = i;
+		ft_strdel(&string);
 	}
-	is_operation(&split[i], par);
-	par->y++;
-	add_token(par, NEW_LINE, NULL);
-	par->x = 0;
+	parse_args(par);
+
+
+
+
+//	flag = 1;
+//	i = 0;
+//	split = ft_strsplit_tab_space(par->file[par->y], ' ', '\t');
+//	while(flag)
+//	{
+//		flag = 0;
+//		if (is_label(split[i], par))
+//        {
+//		    add_token(par, LABEL, split[i]);
+//		    par->x += ft_strlen(split[i]);
+//		    i++;
+//        }
+//		if (!split[i])
+//		{
+//			par->y++;
+//			par->x = 0;
+//			if (par->file[par->y] == NULL)
+//				error_syntax(par->y, par->x);
+//			flag = 1;
+//			i = 0;
+//			split = ft_strsplit_tab_space(par->file[par->y], ' ', '\t');
+//		}
+//	}
+//	is_operation(&split[i], par);
+//	par->y++;
+//	add_token(par, NEW_LINE, NULL);
+//	par->x = 0;
 //	if (!par->file[par->y])
 //		error_endline();
 }
@@ -171,8 +314,6 @@ void parse_token(t_parser *par)
 	flag = 0;
 	while (par->file[par->y] != NULL)
 	{
-	    while ((par->file[par->y][par->x] == '\t' || par->file[par->y][par->x] == ' ') && par->file[par->y][par->x] != '\0')
-	        par->x++;
 		while (par->file[par->y][par->x] == '\0' || par->file[par->y][par->x]
 		== COMMENT_CHAR || par->file[par->y][par->x] == ALT_COMMENT_CHAR)
 			par->y++;
