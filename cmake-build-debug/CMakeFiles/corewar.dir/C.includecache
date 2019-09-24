@@ -18,6 +18,10 @@ op.h
 op_struct.h
 /Users/nwispmot/Desktop/corewar/op_struct.h
 
+/Users/nwispmot/Desktop/corewar/errors.c
+asm.h
+/Users/nwispmot/Desktop/corewar/asm.h
+
 /Users/nwispmot/Desktop/corewar/libft/libft.h
 sys/types.h
 -
@@ -31,6 +35,10 @@ stdlib.h
 -
 unistd.h
 -
+
+/Users/nwispmot/Desktop/corewar/name_comment.c
+asm.h
+/Users/nwispmot/Desktop/corewar/asm.h
 
 /Users/nwispmot/Desktop/corewar/op.h
 

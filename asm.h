@@ -4,6 +4,7 @@
 #include "libft/libft.h"
 #include "op.h"
 #include "op_struct.h"
+# define EXEC_START (4 + PROG_NAME_LENGTH + 4 + 4 + COMMENT_LENGTH + 4)
 
 typedef enum
 {
@@ -20,6 +21,9 @@ typedef enum
 	NEW_LINE,
 	END
 }	t_type;
+
+unsigned int g_bytes;
+char	*g_buf;
 
 //static char				*g_type[] = {
 //		"COMMAND",
@@ -40,8 +44,6 @@ typedef struct			s_token
 {
 	char				*content;
 	t_type				type;
-	unsigned			row;
-	unsigned			column;
 	struct s_token		*next;
 }						t_token;
 

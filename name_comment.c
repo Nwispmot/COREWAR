@@ -105,24 +105,42 @@ void	parse_name_and_comment(t_parser *par)
 	}
 }
 
+void	check_end_line(char *str)
+{
+	int i;
+	int j;
+
+	i = 0;
+	j = 0;
+	while(str[i] != '\0')
+		i++;
+	while(i > 0 && (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == '\0'))
+	{
+		if(str[i] == '\n')
+			j++;
+		i--;
+	}
+	if(j == 0)
+		error_endline();
+}
+
 void	read_file(t_parser *par)
 {
-	char *line;
-	char *file;
+	char	buf[100];
+	char	*tmp;
+	ssize_t		k;
+	char	*file;
 
-	file = NULL;
-	while (get_next_line(par->fd, &line) > 0)
+	file = ft_strnew(0);
+	while ((k = read(par->fd, buf, 99)) > 0)
 	{
-		if (!file)
-		{
-			file = ft_strdup(line);
-		}
-		else
-		{
-			file = ft_strjoin(file, "\n");
-			file = ft_strjoin_free(file, line, 1, 0);
-		}
+		buf[k] = '\0';
+		tmp = file;
+		file = ft_strjoin(file, buf);
+		free(tmp);
 	}
+	check_end_line(file);
 	par->file = ft_strsplit_n(file, '\n');
+
 	free(file);
 }
