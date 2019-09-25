@@ -103,4 +103,4 @@ add_executable(corewar
         asm.c
         name_comment.c
         errors.c
-        asm.h)
+        asm.h args_types.c)

@@ -4,7 +4,7 @@ LIB_DIR	 = ./libft
 NAME	 = asm
 LIBFT 	 = $(LIB_DIR)/libft.a
 
-SRC 	 = asm.c errors.c name_comment.c
+SRC 	 = asm.c errors.c name_comment.c args_types.c
 
 OBJ 	 = $(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
 

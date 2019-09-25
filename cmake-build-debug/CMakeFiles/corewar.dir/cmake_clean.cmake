@@ -92,6 +92,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/corewar.dir/asm.c.o"
   "CMakeFiles/corewar.dir/name_comment.c.o"
   "CMakeFiles/corewar.dir/errors.c.o"
+  "CMakeFiles/corewar.dir/args_types.c.o"
   "corewar.pdb"
   "corewar"
 )

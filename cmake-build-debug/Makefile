@@ -123,6 +123,33 @@ corewar/fast:
 	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/build
 .PHONY : corewar/fast
 
+args_types.o: args_types.c.o
+
+.PHONY : args_types.o
+
+# target to build an object file
+args_types.c.o:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/args_types.c.o
+.PHONY : args_types.c.o
+
+args_types.i: args_types.c.i
+
+.PHONY : args_types.i
+
+# target to preprocess a source file
+args_types.c.i:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/args_types.c.i
+.PHONY : args_types.c.i
+
+args_types.s: args_types.c.s
+
+.PHONY : args_types.s
+
+# target to generate assembly for a file
+args_types.c.s:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/args_types.c.s
+.PHONY : args_types.c.s
+
 asm.o: asm.c.o
 
 .PHONY : asm.o
@@ -2643,6 +2670,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... corewar"
+	@echo "... args_types.o"
+	@echo "... args_types.i"
+	@echo "... args_types.s"
 	@echo "... asm.o"
 	@echo "... asm.i"
 	@echo "... asm.s"

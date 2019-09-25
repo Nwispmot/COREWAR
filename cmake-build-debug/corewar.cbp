@@ -84,6 +84,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/nwispmot/Desktop/corewar/args_types.c">
+			<Option target="corewar"/>
+		</Unit>
 		<Unit filename="/Users/nwispmot/Desktop/corewar/asm.c">
 			<Option target="corewar"/>
 		</Unit>

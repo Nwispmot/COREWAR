@@ -11,11 +11,12 @@
 /* ************************************************************************** */
 
 #include "asm.h"
+void	int_to_hex(int32_t dec, int dir_size, unsigned place);
 
 void    add_token(t_parser *par, t_type type, char *content)
 {
 	t_token	*new;
-	t_token	*head;
+	//t_token	*head;
 
 	if (!par->tokens)
 	{
@@ -25,13 +26,14 @@ void    add_token(t_parser *par, t_type type, char *content)
 		if (content)
 			par->tokens->content = ft_strdup(content);
 		par->tokens->next = NULL;
+		par->head = par->tokens;
 	}
 	else
 	{
-		head = par->tokens;
-		while (head->next)
+//		head = par->tokens;
+		while (par->tokens->next)
 		{
-			head = head->next;
+			par->tokens = par->tokens->next;
 		}
 		new = (t_token*)malloc(sizeof(t_token));
 		ft_bzero(new, sizeof(t_token));
@@ -39,14 +41,15 @@ void    add_token(t_parser *par, t_type type, char *content)
 		if (content)
 			new->content = ft_strdup(content);
 		new->next = NULL;
-		head->next = new;
+		par->tokens->next = new;
+        par->tokens = par->tokens->next;
 	}
 }
 
 void    add_label_token(t_parser *par, char *content)
 {
 	t_token	*new;
-	t_token	*head;
+	//t_token	*head;
 
 	if (!par->tokens)
 	{
@@ -57,13 +60,14 @@ void    add_label_token(t_parser *par, char *content)
 		if (content)
 			par->tokens->content = ft_strsub(content, 0, ft_strlen(content) - 1);
 		par->tokens->next = NULL;
+		par->head = par->tokens;
 	}
 	else
 	{
-		head = par->tokens;
-		while (head->next)
+//		head = par->tokens;
+		while (par->tokens->next)
 		{
-			head = head->next;
+			par->tokens = par->tokens->next;
 		}
 		new = (t_token*)malloc(sizeof(t_token));
 		ft_bzero(new, sizeof(t_token));
@@ -71,7 +75,8 @@ void    add_label_token(t_parser *par, char *content)
 		if (content)
 			new->content = ft_strsub(content, 0, ft_strlen(content) - 1);
 		new->next = NULL;
-		head->next = new;
+		par->tokens->next = new;
+        par->tokens = par->tokens->next;
 	}
 }
 
@@ -93,79 +98,6 @@ int		is_label(char *str, t_parser *par)
 		return (0);
 }
 
-void	is_registry(char *string, t_parser *par)
-{
-	int i;
-
-	i = 1;
-	if(!(ft_isalnum(string[0]) && (ft_isalnum(string[1]) || string[1] == ' '
-	|| string[1] == '\t' || string[1] == '\0')))
-		error_lexical(par->y, par->x);
-	while(string[i] != '\0' && string[++i])
-		if (string[i] != '\t' && string[i] != ' ')
-			error_lexical(par->y, par->x + i);
-	add_token(par, REGISTER, string);
-}
-
-void is_indir_dir_label(char *string, t_parser *par, t_type type)
-{
-	int i;
-
-	i = -1;
-	while(string[++i] && string[i] != '\t' && string[i] != ' ')
-		if (ft_strchr(LABEL_CHARS, string[i]) == NULL)
-			error_lexical(par->y, par->x + i);
-	i--;
-	while(string[++i])
-	    if (string[i] != ' ' && string[i] != '\t')
-	        error_lexical(par->y, par->x + i);
-	i = 0;
-	while(string[i] && string[i] != '\t' && string[i] != ' ')
-	    i++;
-	string = ft_strsub(string, 0, i);  //freeeeeee
-	add_token(par, type, string);
-}
-
-void is_dir_or_indir(char *string, t_parser *par, t_type type)
-{
-	int i;
-
-	i = -1;
-	if(string[0] == '-')
-		i = 0;
-	if(string[0] == LABEL_CHAR && type == DIRECT)
-		is_indir_dir_label(&string[1], par, DIRECT_LABEL);
-	else
-	{
-		while (string[++i] && string[i] != ' ' && string[i] != '\t')
-			if (ft_isalnum(string[i]) == 0)
-				error_lexical(par->y, par->x + i);
-		while (string[i] != '\0' && string[++i])
-			if (string[i] != '\t' && string[i] != ' ')
-				error_lexical(par->y, par->x + i);
-		add_token(par, type, string);
-	}
-}
-
-void    check_args(char *string, t_parser *par)
-{
-	int i;
-
-	i = 0;
-	while ((string[i] == ' ' || string[i] == '\t') && par->file[par->y][i])
-		i++;
-	if (string[i] == REG_CHAR)
-		is_registry(&string[++i], par);
-	else if (string[i] == DIRECT_CHAR)
-		is_dir_or_indir(&string[++i], par, DIRECT);
-	else if (ft_isalnum(string[i]))
-		is_dir_or_indir(&string[i], par, INDIRECT);
-	else if (string[i] == LABEL_CHAR)
-		is_indir_dir_label(&string[++i], par, INDIRECT_LABEL);
-	else
-		error_lexical(par->y, par->x);
-}
-
 void    is_operation(char *str, t_parser *par)
 {
     int oper;
@@ -178,7 +110,10 @@ void    is_operation(char *str, t_parser *par)
         if (ft_strcmp(op[oper].name, str) == 0)
         {
         	add_token(par, OPERATOR, str);
+        	par->tokens->data = oper; /////////////////////////////////////////////////
         	par->oper = oper;
+        	par->arg = 0;
+			g_bytes += 1 + (op[par->oper].args_types_code ? 1 : 0);
 			ft_printf("%s\n", op[oper].name);
 			return ;
         }
@@ -288,28 +223,120 @@ void parse_token(t_parser *par)
 	}
 }
 
-//void file_cor(t_parser *par)
-//{
-//	int fd;
-//	char *base[4];
-//
-//	base =
-//	if((fd = open(par->file_name, O_CREAT | O_TRUNC | O_WRONLY, 0644)) == -1)
-//		error_endline();
-//	if(write(fd, "15", 4) == -1)
-//	{
-//		close(fd);
-//		error_endline();
-//	}
-//	close(fd);
-//}
+///////////////////////////////////////////////////////////////////////////
+
+void	code_of_args_type(t_token *op, unsigned dest, u_int8_t n_arg)
+{
+    int8_t	res;
+    int		arg;
+
+    res = 0;
+    arg = 0;
+    while (arg < n_arg)
+    {
+        if (op->type == REGISTER)
+            res |= 1 << 2 * (3 - arg++);
+        else if (op->type == DIRECT || op->type == DIRECT_LABEL)
+            res |= 2 << 2 * (3 - arg++);
+        else if (op->type == INDIRECT || op->type == INDIRECT_LABEL)
+            res |= 3 << 2 * (3 - arg++);
+        op = op->next;
+    }
+    int_to_hex(res, 1, dest);
+}
+
+void    fill_args_data(t_parser *par, unsigned *dest)
+{
+    int     len;
+
+    len = 0;
+    if (par->head->type == REGISTER)
+        len = T_REG;
+    else if(par->head->type == DIRECT || par->head->type == DIRECT_LABEL)
+        len = op[par->oper].t_dir_size;
+    else if(par->head->type == INDIRECT || par->head->type == INDIRECT_LABEL)
+        len = 2;
+
+    int_to_hex(par->head->data, len, *dest);
+    *dest += len;
+    par->head = par->head->next;
+}
+
+void    filler_char_array(t_parser *par, unsigned dest)
+{
+    while(par->head)
+    {
+        if(par->head->type == OPERATOR)
+        {
+            par->oper = par->head->data;
+            int_to_hex(op[par->head->data].code, 1, dest);
+            dest++;
+            if(op[par->head->data].args_types_code)
+            {
+                 code_of_args_type(par->head, dest, op[par->oper].args_num);
+                 dest++;
+            }
+            par->head = par->head->next;
+        }
+        else if(par->head->type == REGISTER || par->head->type == DIRECT ||
+        par->head->type == INDIRECT || par->head->type == DIRECT_LABEL ||
+        par->head->type == INDIRECT_LABEL)
+            fill_args_data(par, &dest);
+        else
+            par->head = par->head->next;
+    }
+}
+
+void	int_to_hex(int32_t dec, int dir_size, unsigned place)
+{
+    int			move;
+
+    move = 0;
+    while (dir_size)
+    {
+        g_buf[place + dir_size - 1] = (u_int8_t)((dec >> move) & 0xFF);
+        move += 8;
+        dir_size--;
+    }
+}
+
+void file_cor(t_parser *par)
+{
+    int fd;
+
+    if((fd = open(par->file_name, O_CREAT | O_TRUNC | O_WRONLY, 0644)) == -1)
+        error_endline();
+    if(write(fd, g_buf, EXEC_START + g_bytes) == -1)
+    {
+        close(fd);
+        error_endline();
+    }
+    close(fd);
+}
+
+void fill_and_create(t_parser *parser)
+{
+    g_buf = (char *)malloc(sizeof(char) * (EXEC_START + g_bytes));
+    ft_bzero(g_buf, (EXEC_START + g_bytes));
+    int_to_hex(COREWAR_EXEC_MAGIC, 4, 0);
+    ft_memcpy(&g_buf[4], parser->name, ft_strlen(parser->name));
+    ft_memcpy(&g_buf[4 + PROG_NAME_LENGTH + 4 + 4], parser->comment, ft_strlen(parser->comment));
+    int_to_hex(g_bytes, 4, (unsigned)(4 + PROG_NAME_LENGTH + 4));
+    filler_char_array(parser, EXEC_START);
+    file_cor(parser);
+}
+
+/////////////////////////////////////////////////////////////////////////////
+
+
+
 
 int		main(int ac, char **av)
 {
 	t_parser parser;
 
 	ft_bzero(&parser, sizeof(t_parser));
-	g_bytes = EXEC_START;
+	g_bytes = 0;
 	check_file_name(av[1], &parser);
 	if (ac == 2)
 	{
@@ -320,14 +347,13 @@ int		main(int ac, char **av)
 		ft_printf("Writing output program to %s.cor\n", parser.file_name);
 	}
 	ft_printf("\n");
+	fill_and_create(&parser);
 	for (int i = 6;parser.tokens;i++)
 	{
 		if(parser.tokens->type == LABEL)
 			ft_printf("%s\n", parser.tokens->content);
 		parser.tokens = parser.tokens->next;
 	}
-	ft_printf("%s\n", parser.file_name);
-	//file_cor(&parser);
 	ft_printf("%d", op[1].args_types[0]);
 	exit(0);
 }
