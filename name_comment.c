@@ -15,13 +15,15 @@
 void	check_file_name(char *str, t_parser *par)
 {
 	size_t i;
+	char *name;
 
 	i = ft_strlen(str) - 1;
 	if (str[i] != 's' || str[i - 1] != '.')
 		print_error_file();
-	par->file_name = ft_strnew(i - 2);
-	ft_strncpy(par->file_name, str, i - 1);
-	par->file_name = ft_strjoin_free(par->file_name, ".cor", 1, 0);
+	name = ft_strnew(i - 2);
+	ft_strncpy(name, str, i - 1);
+	name = ft_strjoin(name, ".cor");
+	par->file_name = name;
 }
 
 void	quotes(char *str, int *i1, int *j1, t_parser *par)

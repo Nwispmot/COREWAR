@@ -51,6 +51,13 @@ typedef struct			s_token
 	struct s_token		*next;
 }						t_token;
 
+typedef struct			s_label
+{
+    t_token				*point;
+    struct s_label		*next;
+    struct s_label		*prev;
+}						t_label;
+
 typedef	struct		s_parser
 {
 	int 			x;
@@ -62,7 +69,7 @@ typedef	struct		s_parser
 	char 			*name;
 	char 			*comment;
 	char 			**file;
-	//t_label			*labels;
+	t_label			*labels;
 	t_token			*tokens;
     t_token			*head;
 

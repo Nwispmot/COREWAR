@@ -12,20 +12,19 @@
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dst, const char *src, size_t len)
+char	*ft_strncpy(char *dest, const char *src, size_t n)
 {
-	size_t i;
+    unsigned char	*orig;
+    unsigned char	*res;
 
-	i = 0;
-	while (i < len && src[i] != '\0')
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	while (i < len)
-	{
-		dst[i] = '\0';
-		i++;
-	}
-	return (dst);
+    orig = (unsigned char *)src;
+    res = (unsigned char *)dest;
+    while (n && *orig)
+    {
+        *(res++) = *(orig++);
+        n--;
+    }
+    while (n-- > 0)
+        *(res++) = '\0';
+    return (dest);
 }

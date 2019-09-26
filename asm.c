@@ -46,6 +46,40 @@ void    add_token(t_parser *par, t_type type, char *content)
 	}
 }
 
+void    add_label(t_parser *par, t_token *token)
+{
+    t_label *new;
+    t_label *head;
+
+    if (!par->labels)
+    {
+        par->labels = (t_label*)malloc(sizeof(t_label));
+        ft_bzero(par->labels, sizeof(t_label));
+        par->labels->point = token;
+        par->labels->prev = NULL;
+        par->labels->next = NULL;
+    }
+    else
+    {
+        head = par->labels;
+        while (head->next)
+        {
+//            if (ft_strcmp(head->point->content, token->content) == 0)
+//            {
+//                head->point = token;
+//                return ;
+//            }
+            head = head->next;
+        }
+        new = (t_label*)malloc(sizeof(t_label));
+        ft_bzero(new, sizeof(t_label));
+        new->point = token;
+        new->next = NULL;
+        head->next = new;
+        new->prev = head;
+    }
+}
+
 void    add_label_token(t_parser *par, char *content)
 {
 	t_token	*new;
@@ -78,6 +112,7 @@ void    add_label_token(t_parser *par, char *content)
 		par->tokens->next = new;
         par->tokens = par->tokens->next;
 	}
+	add_label(par, par->tokens);
 }
 
 int		is_label(char *str, t_parser *par)
@@ -113,7 +148,8 @@ void    is_operation(char *str, t_parser *par)
         	par->tokens->data = oper; /////////////////////////////////////////////////
         	par->oper = oper;
         	par->arg = 0;
-			g_bytes += 1 + (op[par->oper].args_types_code ? 1 : 0);
+            par->tokens->bytes = g_bytes;
+            g_bytes += 1 + (op[par->oper].args_types_code ? 1 : 0);
 			ft_printf("%s\n", op[oper].name);
 			return ;
         }
@@ -146,10 +182,13 @@ void	parse_args(t_parser *par)
 	i = par->x;
 	while(par->file[par->y][par->x] != '\0')
 	{
+	    if (par->file[par->y][par->x] == '#')
+            return ;
 	    if (args >= op[par->oper].args_num)
 	        break ;
 	        //error_lexical(par->y, par->x);
-		while (par->file[par->y][i] != SEPARATOR_CHAR && par->file[par->y][i])
+		while (par->file[par->y][i] != SEPARATOR_CHAR  && par->file[par->y][i] != ' '
+		&& par->file[par->y][i] != '\t' && par->file[par->y][i])
 			i++;
 		string = ft_strsub(par->file[par->y], par->x, i - par->x);
 		check_args(string, par);
@@ -217,7 +256,10 @@ void parse_token(t_parser *par)
 	{
 		while (par->file[par->y] && (par->file[par->y][par->x] == '\0' || par->file[par->y][par->x]
 		== COMMENT_CHAR || par->file[par->y][par->x] == ALT_COMMENT_CHAR))
-			par->y++;
+        {
+            par->y++;
+            par->x = 0;
+        }
 		if(par->file[par->y])
 		    new_token(par);
 	}
@@ -316,6 +358,7 @@ void file_cor(t_parser *par)
 
 void fill_and_create(t_parser *parser)
 {
+    ft_printf("Writing output program to %s\n", parser->file_name);
     g_buf = (char *)malloc(sizeof(char) * (EXEC_START + g_bytes));
     ft_bzero(g_buf, (EXEC_START + g_bytes));
     int_to_hex(COREWAR_EXEC_MAGIC, 4, 0);
@@ -329,6 +372,44 @@ void fill_and_create(t_parser *parser)
 /////////////////////////////////////////////////////////////////////////////
 
 
+unsigned    add_bytes(t_token *operator, char *label, t_parser *par)
+{
+    unsigned cur_byte;
+    unsigned label_byte;
+    t_label *head;
+
+    head = par->labels;
+    cur_byte = operator->bytes;
+
+    while (head->next)
+    {
+        if (ft_strcmp(label, head->point->content) == 0)
+            break;
+        head = head->next;
+    }
+    label_byte = head->point->next->bytes;
+//    if (cur_byte < label_byte)
+    return (label_byte - cur_byte);
+//    else ()
+//    return (cur_byte + label_byte);
+}
+
+void    bytes_in_labels(t_parser *par)
+{
+    t_token *operator;
+
+    operator = NULL;
+    while (par->tokens)
+    {
+        if (par->tokens->type == OPERATOR)
+            operator = par->tokens;
+        if (par->tokens->type == INDIRECT_LABEL || par->tokens->type == DIRECT_LABEL)
+        {
+            par->tokens->data = add_bytes(operator, par->tokens->content, par);
+        }
+        par->tokens = par->tokens->next;
+    }
+}
 
 
 int		main(int ac, char **av)
@@ -344,16 +425,18 @@ int		main(int ac, char **av)
 		read_file(&parser);
 		parse_name_and_comment(&parser);
 		parse_token(&parser);
-		ft_printf("Writing output program to %s.cor\n", parser.file_name);
+        parser.tokens = parser.head;
+		bytes_in_labels(&parser);
 	}
 	ft_printf("\n");
+	parser.tokens = parser.head;
 	fill_and_create(&parser);
-	for (int i = 6;parser.tokens;i++)
-	{
-		if(parser.tokens->type == LABEL)
-			ft_printf("%s\n", parser.tokens->content);
-		parser.tokens = parser.tokens->next;
-	}
+//	for (int i = 6;parser.tokens;i++)
+//	{
+//		if(parser.tokens->type == LABEL)
+//			ft_printf("%s\n", parser.tokens->content);
+//		parser.tokens = parser.tokens->next;
+//	}
 	ft_printf("%d", op[1].args_types[0]);
 	exit(0);
 }

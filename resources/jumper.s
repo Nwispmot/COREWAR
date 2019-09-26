@@ -3,8 +3,8 @@
 .name "Jumper !"
 .comment "en fait C forker !"
 
-gobepc:	st r1,:buff
-	st r6,-5
+gobepc:	st r1,:buff -52
+	st r6,-4
 	ld :buff,r1
 debut:	ld %0,r7
 	zjmp %:suite
