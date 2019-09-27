@@ -82,16 +82,15 @@ void				error_syntax(int y, int x);
 void				error_longname();
 void                error_param();
 void				error_endline();
+void                error_no_label(char *str);
 void				parse_name_and_comment(t_parser *par);
 void				check_file_name(char *str, t_parser *par);
 void				parse_name_and_comment(t_parser *par);
 void				error_longcomment();
 void				read_file(t_parser *par);
 void 				parse_token(t_parser *par);
-
-
 void                add_token(t_parser *par, t_type type, char *content);
-
+void                search_label(t_parser *par, char *label);
 void                valid_arg(t_parser *par, t_token *token);
 void                is_registry(char *string, t_parser *par);
 void                is_indir_dir_label(char *string, t_parser *par, t_type type);

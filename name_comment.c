@@ -75,7 +75,7 @@ void	new_name_or_commit(char *str, t_parser *par, int be)
 		par->comment = ft_strsub(str, i + 1, (j - i) - 1);
 	}
 	else
-		error_syntax(par->y, par->x);
+		error_syntax(par->y, be);
 }
 
 void	parse_name_and_comment(t_parser *par)

@@ -387,11 +387,10 @@ unsigned    add_bytes(t_token *operator, char *label, t_parser *par)
             break;
         head = head->next;
     }
+    while (head->point->next->type != OPERATOR)
+        head->point = head->point->next;
     label_byte = head->point->next->bytes;
-//    if (cur_byte < label_byte)
     return (label_byte - cur_byte);
-//    else ()
-//    return (cur_byte + label_byte);
 }
 
 void    bytes_in_labels(t_parser *par)
@@ -403,8 +402,9 @@ void    bytes_in_labels(t_parser *par)
     {
         if (par->tokens->type == OPERATOR)
             operator = par->tokens;
-        if (par->tokens->type == INDIRECT_LABEL || par->tokens->type == DIRECT_LABEL)
+        else if (par->tokens->type == INDIRECT_LABEL || par->tokens->type == DIRECT_LABEL)
         {
+            search_label(par, par->tokens->content);
             par->tokens->data = add_bytes(operator, par->tokens->content, par);
         }
         par->tokens = par->tokens->next;

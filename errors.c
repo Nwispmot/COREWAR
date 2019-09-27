@@ -57,3 +57,9 @@ void error_param()
     ft_printf("Invalid parameter count for instruction \n");
     exit(0);
 }
+
+void error_no_label(char *str)
+{
+    ft_printf("No such label at [%s]\n", str);
+    exit(0);
+}

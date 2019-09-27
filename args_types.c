@@ -56,6 +56,21 @@ void	is_registry(char *string, t_parser *par)
     par->tokens->data = ft_atoi(string); ///////////////////////////////////////////
 }
 
+void  search_label(t_parser *par, char *label)
+{
+    t_label *head;
+
+    head = par->labels;
+
+    while (head)
+    {
+        if (ft_strcmp(head->point->content, label) == 0)
+            return ;
+        head = head->next;
+    }
+    error_no_label(label);
+}
+
 void is_indir_dir_label(char *string, t_parser *par, t_type type)
 {
     int i;
@@ -63,7 +78,7 @@ void is_indir_dir_label(char *string, t_parser *par, t_type type)
     i = -1;
     while(string[++i] && string[i] != '\t' && string[i] != ' ')
         if (ft_strchr(LABEL_CHARS, string[i]) == NULL)
-            error_lexical(par->y, par->x + i);
+            error_lexical(par->y, par->x + ++i);
     i--;
     while(string[++i])
         if (string[i] != ' ' && string[i] != '\t')
@@ -72,6 +87,7 @@ void is_indir_dir_label(char *string, t_parser *par, t_type type)
     while(string[i] && string[i] != '\t' && string[i] != ' ')
         i++;
     string = ft_strsub(string, 0, i);  //freeeeeee
+    //search_label(par, string);
     add_token(par, type, string);
 }
 
