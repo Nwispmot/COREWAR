@@ -84,6 +84,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/nwispmot/Desktop/corewar/add_label_token.c">
+			<Option target="corewar"/>
+		</Unit>
 		<Unit filename="/Users/nwispmot/Desktop/corewar/args_types.c">
 			<Option target="corewar"/>
 		</Unit>
@@ -93,7 +96,13 @@
 		<Unit filename="/Users/nwispmot/Desktop/corewar/asm.h">
 			<Option target="corewar"/>
 		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/corewar/create.c">
+			<Option target="corewar"/>
+		</Unit>
 		<Unit filename="/Users/nwispmot/Desktop/corewar/errors.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/corewar/fill.c">
 			<Option target="corewar"/>
 		</Unit>
 		<Unit filename="/Users/nwispmot/Desktop/corewar/libft/char_str.c">
@@ -318,6 +327,9 @@
 		<Unit filename="/Users/nwispmot/Desktop/corewar/libft/ft_strsub.c">
 			<Option target="corewar"/>
 		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/corewar/libft/ft_strsub_free.c">
+			<Option target="corewar"/>
+		</Unit>
 		<Unit filename="/Users/nwispmot/Desktop/corewar/libft/ft_strtrim.c">
 			<Option target="corewar"/>
 		</Unit>
@@ -376,6 +388,9 @@
 			<Option target="corewar"/>
 		</Unit>
 		<Unit filename="/Users/nwispmot/Desktop/corewar/name_comment.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/corewar/parse_tokens.c">
 			<Option target="corewar"/>
 		</Unit>
 		<Unit filename="/Users/nwispmot/Desktop/corewar/CMakeLists.txt">

@@ -24,6 +24,7 @@ char	*ft_strncpy(char *dest, const char *src, size_t n)
         *(res++) = *(orig++);
         n--;
     }
+	*(res++) = '\0';
     while (n-- > 0)
         *(res++) = '\0';
     return (dest);

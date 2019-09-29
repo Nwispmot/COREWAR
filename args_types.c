@@ -73,7 +73,8 @@ void  search_label(t_parser *par, char *label)
 
 void is_indir_dir_label(char *string, t_parser *par, t_type type)
 {
-    int i;
+    int		i;
+    char	*str;
 
     i = -1;
     while(string[++i] && string[i] != '\t' && string[i] != ' ')
@@ -86,9 +87,10 @@ void is_indir_dir_label(char *string, t_parser *par, t_type type)
     i = 0;
     while(string[i] && string[i] != '\t' && string[i] != ' ')
         i++;
-    string = ft_strsub(string, 0, i);  //freeeeeee
+    str = ft_strsub(string, 0, i);  //freeeeeee
     //search_label(par, string);
-    add_token(par, type, string);
+    add_token(par, type, str);
+    free(str);
 }
 
 void is_dir_or_indir(char *string, t_parser *par, t_type type)

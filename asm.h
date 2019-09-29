@@ -81,6 +81,9 @@ void				print_error_file();
 void				error_syntax(int y, int x);
 void				error_longname();
 void                error_param();
+void				error_null(int y, int x);
+void				error_name_comment();
+void				error_mc();
 void				error_endline();
 void                error_no_label(char *str);
 void				parse_name_and_comment(t_parser *par);
@@ -96,5 +99,14 @@ void                is_registry(char *string, t_parser *par);
 void                is_indir_dir_label(char *string, t_parser *par, t_type type);
 void                is_dir_or_indir(char *string, t_parser *par, t_type type);
 void                check_args(char *string, t_parser *par);
+void                filler_char_array(t_parser *par, unsigned dest);
+void				bytes_in_labels(t_parser *par);
+void				file_cor(t_parser *par);
+void				int_to_hex(int32_t dec, int dir_size, unsigned place);
+void				add_label_token(t_parser *par, char *content);
+void				new_token(t_parser *par);
+void				add_label(t_parser *par, t_token *token);
+void				add_token(t_parser *par, t_type type, char *content);
+void				parse_args(t_parser *par);
 
 #endif

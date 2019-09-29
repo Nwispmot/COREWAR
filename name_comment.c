@@ -15,18 +15,19 @@
 void	check_file_name(char *str, t_parser *par)
 {
 	size_t i;
-	char *name;
+//	char *name;
 
 	i = ft_strlen(str) - 1;
 	if (str[i] != 's' || str[i - 1] != '.')
 		print_error_file();
-	name = ft_strnew(i - 2);
-	ft_strncpy(name, str, i - 1);
-	name = ft_strjoin(name, ".cor");
-	par->file_name = name;
+//	name = ft_strnew(i - 2);
+//	ft_strncpy(name, str, i - 1);
+//	name = ft_strjoin_free(name, ".cor", 1, 0);
+	par->file_name = str;
+//	free(name);
 }
 
-void	quotes(char *str, int *i1, int *j1, t_parser *par)
+char	*quotes(char *str, int *i1, int *j1, t_parser *par)
 {
 	int i;
 	int j;
@@ -41,8 +42,15 @@ void	quotes(char *str, int *i1, int *j1, t_parser *par)
 		while (str[j] == '\0')
 		{
 			par->y++;
+			if (par->file[par->y][0] == '\"')
+			{
+				par->x = 1;
+				*i1 = i;
+				*j1 = j;
+				return (str);
+			}
 			str = ft_strjoin(ft_strjoin(str, "\n"), par->file[par->y]);
-			par->x = 1;
+			par->x = -1;
 			j++;
 		}
 		par->x++;
@@ -50,6 +58,7 @@ void	quotes(char *str, int *i1, int *j1, t_parser *par)
 	}
 	*i1 = i;
 	*j1 = j;
+	return (str);
 }
 
 void	new_name_or_commit(char *str, t_parser *par, int be)
@@ -60,7 +69,7 @@ void	new_name_or_commit(char *str, t_parser *par, int be)
 
 	i = 0;
 	len = -1;
-	quotes(str, &i, &j, par);
+	str = quotes(str, &i, &j, par);
 	len += (j - i);
 	if (ft_strncmp(NAME_CMD_STRING, str, 5) == 0)
 	{
@@ -105,6 +114,8 @@ void	parse_name_and_comment(t_parser *par)
 		else
 			error_syntax(par->y, par->x);
 	}
+	if (!par->name || !par->comment)
+		error_name_comment();
 }
 
 void	check_end_line(char *str)

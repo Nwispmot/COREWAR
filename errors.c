@@ -36,7 +36,7 @@ void error_exit(void) {
 
 void error_endline()
 {
-	ft_printf("Syntax error - unexpected end of input (Perhaps you forgot to end with a newline ?)");
+	ft_printf("Syntax error - unexpected end of input (Perhaps you forgot to end with a newline ?)\n");
 	exit(0);
 }
 
@@ -52,9 +52,9 @@ void error_longcomment()
 	exit(0);
 }
 
-void error_param()
+void error_name_comment()
 {
-    ft_printf("Invalid parameter count for instruction \n");
+    ft_printf("No name or comment\n");
     exit(0);
 }
 
@@ -62,4 +62,16 @@ void error_no_label(char *str)
 {
     ft_printf("No such label at [%s]\n", str);
     exit(0);
+}
+
+void error_mc()
+{
+	ft_printf("File not created\n");
+	exit(0);
+}
+
+void error_null(int y, int x)
+{
+	ft_printf("Syntax error at [%d:%d] \"null\"\n" ,y + 1, x + 1);
+	exit(0);
 }

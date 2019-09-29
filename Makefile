@@ -4,12 +4,12 @@ LIB_DIR	 = ./libft
 NAME	 = asm
 LIBFT 	 = $(LIB_DIR)/libft.a
 
-SRC 	 = asm.c errors.c name_comment.c args_types.c
+SRC 	 = asm.c add_label_token.c args_types.c errors.c create.c fill.c name_comment.c  parse_tokens.c
 
 OBJ 	 = $(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
 
 CC	 = gcc
-CFLAGS	 = -Wall -Wextra -Werror
+CFLAGS	 = -Wall -Wextra -Werror -g
 LIB_INC  = -I $(LIB_DIR)/includes
 LIB_LINK = -L $(LIB_DIR) -lft
 

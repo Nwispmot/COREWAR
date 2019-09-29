@@ -101,6 +101,9 @@ add_executable(corewar
         libft/unsigned.c
         libft/width.c
         asm.c
+        add_label_token.c
+        args_types.c
+        errors.c create.c
+        fill.c
         name_comment.c
-        errors.c
-        asm.h args_types.c)
+        parse_tokens.c libft/ft_strsub_free.c)

@@ -111,5 +111,6 @@ long long			ft_atol(const char *str);
 void				ft_swap(long *a, long *b);
 char			**ft_strsplit_n(char const *s, char c);
 char			**ft_strsplit_tab_space(char const *s, char c, char a);
+char			*ft_strsub_free(char *s, unsigned int start, size_t len);
 
 #endif
