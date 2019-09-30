@@ -15,16 +15,11 @@
 void	check_file_name(char *str, t_parser *par)
 {
 	size_t i;
-//	char *name;
 
 	i = ft_strlen(str) - 1;
 	if (str[i] != 's' || str[i - 1] != '.')
 		print_error_file();
-//	name = ft_strnew(i - 2);
-//	ft_strncpy(name, str, i - 1);
-//	name = ft_strjoin_free(name, ".cor", 1, 0);
 	par->file_name = str;
-//	free(name);
 }
 
 char	*quotes(char *str, int *i1, int *j1, t_parser *par)
@@ -45,12 +40,15 @@ char	*quotes(char *str, int *i1, int *j1, t_parser *par)
 			if (par->file[par->y][0] == '\"')
 			{
 				par->x = 1;
+				j++;
 				*i1 = i;
 				*j1 = j;
+				//str[ft_strlen(str) + 1] = '\n';
+				str = ft_strjoin(str, "\n");
 				return (str);
 			}
 			str = ft_strjoin(ft_strjoin(str, "\n"), par->file[par->y]);
-			par->x = -1;
+			par->x = 1;
 			j++;
 		}
 		par->x++;
@@ -114,6 +112,7 @@ void	parse_name_and_comment(t_parser *par)
 		else
 			error_syntax(par->y, par->x);
 	}
+	//ft_printf("%s", par->comment);
 	if (!par->name || !par->comment)
 		error_name_comment();
 }

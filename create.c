@@ -27,9 +27,13 @@ unsigned    add_bytes(t_token *operator, char *label, t_parser *par)
 			break;
 		head = head->next;
 	}
-	while (head->point->next->type != OPERATOR)
+	while (head->point->next && head->point->next->type != OPERATOR)
 		head->point = head->point->next;
-	label_byte = head->point->next->bytes;
+
+	if (head->point->next)
+		label_byte = head->point->next->bytes;
+	else
+		label_byte = head->point->bytes;
 	return (label_byte - cur_byte);
 }
 

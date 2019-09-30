@@ -104,6 +104,5 @@ int		main(int ac, char **av)
 		parser.tokens = parser.head;
 		fill_and_create(&parser);
 	}
-	//ft_printf("\n");
 	exit(0);
 }

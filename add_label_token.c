@@ -94,6 +94,7 @@ void    add_label_token(t_parser *par, char *content)
 			par->tokens->content = ft_strsub(content, 0, ft_strlen(content) - 1);
 		par->tokens->next = NULL;
 		par->head = par->tokens;
+		par->tokens->bytes = g_bytes;
 	}
 	else
 	{
@@ -110,6 +111,7 @@ void    add_label_token(t_parser *par, char *content)
 		new->next = NULL;
 		par->tokens->next = new;
 		par->tokens = par->tokens->next;
+		par->tokens->bytes = g_bytes;
 	}
 	add_label(par, par->tokens);
 }
