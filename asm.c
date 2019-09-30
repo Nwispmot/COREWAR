@@ -80,6 +80,7 @@ void fill_and_create(t_parser *parser)
     int_to_hex(g_bytes, 4, (unsigned)(4 + PROG_NAME_LENGTH + 4));
     filler_char_array(parser, EXEC_START);
     file_cor(parser);
+    ft_strdel(&g_buf);
 }
 
 /////////////////////////////////////////////////////////////////////////////
@@ -95,7 +96,9 @@ int		main(int ac, char **av)
 	if (ac == 2)
 	{
 		check_file_name(av[1], &parser);
-		parser.fd = open(av[1], O_RDONLY);
+		if ((parser.fd = open(av[1], O_RDONLY)) == -1) {
+			error_open();
+		}
 		read_file(&parser);
 		parse_name_and_comment(&parser);
 		parse_token(&parser);
@@ -104,5 +107,7 @@ int		main(int ac, char **av)
 		parser.tokens = parser.head;
 		fill_and_create(&parser);
 	}
+	else
+		print_usage();
 	exit(0);
 }

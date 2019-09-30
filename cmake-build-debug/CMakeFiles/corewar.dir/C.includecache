@@ -6,6 +6,18 @@
 
 #IncludeRegexTransform: 
 
+/Users/nwispmot/Desktop/corewar/add_label_token.c
+asm.h
+/Users/nwispmot/Desktop/corewar/asm.h
+
+/Users/nwispmot/Desktop/corewar/args_types.c
+asm.h
+/Users/nwispmot/Desktop/corewar/asm.h
+
+/Users/nwispmot/Desktop/corewar/asm.c
+asm.h
+/Users/nwispmot/Desktop/corewar/asm.h
+
 /Users/nwispmot/Desktop/corewar/asm.h
 libft/libft.h
 /Users/nwispmot/Desktop/corewar/libft/libft.h
@@ -15,6 +27,14 @@ op_struct.h
 /Users/nwispmot/Desktop/corewar/op_struct.h
 
 /Users/nwispmot/Desktop/corewar/create.c
+asm.h
+/Users/nwispmot/Desktop/corewar/asm.h
+
+/Users/nwispmot/Desktop/corewar/errors.c
+asm.h
+/Users/nwispmot/Desktop/corewar/asm.h
+
+/Users/nwispmot/Desktop/corewar/fill.c
 asm.h
 /Users/nwispmot/Desktop/corewar/asm.h
 
@@ -32,7 +52,15 @@ stdlib.h
 unistd.h
 -
 
+/Users/nwispmot/Desktop/corewar/name_comment.c
+asm.h
+/Users/nwispmot/Desktop/corewar/asm.h
+
 /Users/nwispmot/Desktop/corewar/op.h
 
 /Users/nwispmot/Desktop/corewar/op_struct.h
+
+/Users/nwispmot/Desktop/corewar/parse_tokens.c
+asm.h
+/Users/nwispmot/Desktop/corewar/asm.h
 

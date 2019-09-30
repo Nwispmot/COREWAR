@@ -22,7 +22,7 @@ void	check_file_name(char *str, t_parser *par)
 	par->file_name = str;
 }
 
-char	*quotes(char *str, int *i1, int *j1, t_parser *par)
+char	*quotes(char *str, int *i1, int *j1, t_parser *par, int *fl)
 {
 	int i;
 	int j;
@@ -36,6 +36,7 @@ char	*quotes(char *str, int *i1, int *j1, t_parser *par)
 	{
 		while (str[j] == '\0')
 		{
+		    *fl = 1;
 			par->y++;
 			if (par->file[par->y][0] == '\"')
 			{
@@ -43,11 +44,11 @@ char	*quotes(char *str, int *i1, int *j1, t_parser *par)
 				j++;
 				*i1 = i;
 				*j1 = j;
-				//str[ft_strlen(str) + 1] = '\n';
-				str = ft_strjoin(str, "\n");
+				str = ft_strjoin_free(str, "\n", 1, 0);
 				return (str);
 			}
-			str = ft_strjoin(ft_strjoin(str, "\n"), par->file[par->y]);
+			str = ft_strjoin_free(str, "\n", 1, 0);
+			str = ft_strjoin_free(str, par->file[par->y], 1, 0);
 			par->x = 1;
 			j++;
 		}
@@ -59,15 +60,18 @@ char	*quotes(char *str, int *i1, int *j1, t_parser *par)
 	return (str);
 }
 
-void	new_name_or_commit(char *str, t_parser *par, int be)
+void	new_name_or_commit(char *string, t_parser *par, int be)
 {
 	int j;
 	int i;
 	int len;
+	int fl;
+	char *str;
 
 	i = 0;
+	fl = 0;
 	len = -1;
-	str = quotes(str, &i, &j, par);
+	str = quotes(string, &i, &j, par, &fl);
 	len += (j - i);
 	if (ft_strncmp(NAME_CMD_STRING, str, 5) == 0)
 	{
@@ -82,7 +86,13 @@ void	new_name_or_commit(char *str, t_parser *par, int be)
 		par->comment = ft_strsub(str, i + 1, (j - i) - 1);
 	}
 	else
-		error_syntax(par->y, be);
+	    error_syntax(par->y, be);
+    while ((par->file[par->y][par->x] == ' ' || par->file[par->y][par->x]
+    == '\t') && par->file[par->y][par->x] != '\0')
+        par->x++;
+    if (par->file[par->y][par->x] || fl)
+        ft_strdel(&str);
+
 }
 
 void	parse_name_and_comment(t_parser *par)

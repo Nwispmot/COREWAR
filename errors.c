@@ -43,12 +43,14 @@ void error_endline()
 void error_longname()
 {
 	ft_printf("Champion name too long (Max length 128)\n");
+//	free(str);
 	exit(0);
 }
 
 void error_longcomment()
 {
 	ft_printf("Champion comment too long (Max length 2048)\n");
+//	free(str);
 	exit(0);
 }
 
@@ -74,4 +76,16 @@ void error_null(int y, int x)
 {
 	ft_printf("Syntax error at [%d:%d] \"null\"\n" ,y + 1, x + 1);
 	exit(0);
+}
+
+void print_usage()
+{
+    ft_printf("Usage: ./asm <sourcefile.s>\n");
+    exit(0);
+}
+
+void error_open()
+{
+    ft_printf("Cannot open file.\n");
+    exit(0);
 }

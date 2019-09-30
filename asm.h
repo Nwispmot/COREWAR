@@ -80,7 +80,6 @@ void 				error_lexical(int y, int x);
 void				print_error_file();
 void				error_syntax(int y, int x);
 void				error_longname();
-void                error_param();
 void				error_null(int y, int x);
 void				error_name_comment();
 void				error_mc();
@@ -108,5 +107,7 @@ void				new_token(t_parser *par);
 void				add_label(t_parser *par, t_token *token);
 void				add_token(t_parser *par, t_type type, char *content);
 void				parse_args(t_parser *par);
+void                print_usage();
+void                error_open();
 
 #endif
