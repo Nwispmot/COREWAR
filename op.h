@@ -6,7 +6,7 @@
 /*   By: nwispmot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/12 15:36:04 by nwispmot          #+#    #+#             */
-/*   Updated: 2019/09/12 15:36:18 by nwispmot         ###   ########.fr       */
+/*   Updated: 2019/10/01 21:42:50 by dmorar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@
 
 # define NAME_CMD_STRING            ".name"
 # define COMMENT_CMD_STRING        ".comment"
-
 
 # define REG_NUMBER                16
 

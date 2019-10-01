@@ -122,7 +122,6 @@ void	parse_name_and_comment(t_parser *par)
 		else
 			error_syntax(par->y, par->x);
 	}
-	//ft_printf("%s", par->comment);
 	if (!par->name || !par->comment)
 		error_name_comment();
 }
@@ -148,10 +147,10 @@ void	check_end_line(char *str)
 
 void	read_file(t_parser *par)
 {
-	char	buf[100];
-	char	*tmp;
+	char		buf[100];
+	char		*tmp;
 	ssize_t		k;
-	char	*file;
+	char		*file;
 
 	file = ft_strnew(0);
 	while ((k = read(par->fd, buf, 99)) > 0)
@@ -163,6 +162,5 @@ void	read_file(t_parser *par)
 	}
 	check_end_line(file);
 	par->file = ft_strsplit_n(file, '\n');
-
 	free(file);
 }

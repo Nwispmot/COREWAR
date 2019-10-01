@@ -1,44 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   errors.c                                           :+:      :+:    :+:   */
+/*   error_usage.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmorar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/01 21:16:02 by dmorar            #+#    #+#             */
-/*   Updated: 2019/10/01 21:16:04 by dmorar           ###   ########.fr       */
+/*   Created: 2019/10/01 21:14:25 by dmorar            #+#    #+#             */
+/*   Updated: 2019/10/01 21:14:27 by dmorar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "asm.h"
 
-void	error_syntax(int y, int x)
+void	error_usage(void)
 {
-	ft_printf("Syntax error at token [%d:%d]\n", y + 1, x + 1);
+	ft_printf("Usage: ./asm [-a] <sourcefile.s>");
 	exit(0);
 }
 
-void	error_endline(void)
+void	print_usage(void)
 {
-	ft_printf("Syntax error - unexpected end of input \
-	(Perhaps you forgot to end with a newline ?)\n");
+	ft_printf("Usage: ./asm <sourcefile.s>\n");
 	exit(0);
 }
 
-void	error_no_label(char *str)
+void	error_open(void)
 {
-	ft_printf("No such label at [%s]\n", str);
+	ft_printf("Cannot open file.\n");
 	exit(0);
 }
 
-void	error_null(int y, int x)
+void	print_error_file(void)
 {
-	ft_printf("Syntax error at [%d:%d] \"null\"\n", y + 1, x + 1);
+	ft_printf("Invalid file format\n");
 	exit(0);
 }
 
-void	error_lexical(int y, int x)
+void	error_mc(void)
 {
-	ft_printf("Lexical error at [%d:%d]\n", y + 1, x + 1);
+	ft_printf("File not created\n");
 	exit(0);
 }

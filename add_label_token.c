@@ -12,10 +12,9 @@
 
 #include "asm.h"
 
-void    add_token(t_parser *par, t_type type, char *content)
+void			add_token(t_parser *par, t_type type, char *content)
 {
 	t_token	*new;
-	//t_token	*head;
 
 	if (!par->tokens)
 	{
@@ -29,11 +28,8 @@ void    add_token(t_parser *par, t_type type, char *content)
 	}
 	else
 	{
-//		head = par->tokens;
 		while (par->tokens->next)
-		{
 			par->tokens = par->tokens->next;
-		}
 		new = (t_token*)malloc(sizeof(t_token));
 		ft_bzero(new, sizeof(t_token));
 		new->type = type;
@@ -45,10 +41,10 @@ void    add_token(t_parser *par, t_type type, char *content)
 	}
 }
 
-void    add_label(t_parser *par, t_token *token)
+void			add_label(t_parser *par, t_token *token)
 {
-	t_label *new;
-	t_label *head;
+	t_label		*new;
+	t_label		*head;
 
 	if (!par->labels)
 	{
@@ -62,14 +58,7 @@ void    add_label(t_parser *par, t_token *token)
 	{
 		head = par->labels;
 		while (head->next)
-		{
-//            if (ft_strcmp(head->point->content, token->content) == 0)
-//            {
-//                head->point = token;
-//                return ;
-//            }
 			head = head->next;
-		}
 		new = (t_label*)malloc(sizeof(t_label));
 		ft_bzero(new, sizeof(t_label));
 		new->point = token;
@@ -79,39 +68,38 @@ void    add_label(t_parser *par, t_token *token)
 	}
 }
 
-void    add_label_token(t_parser *par, char *content)
+void			add_label_token2(t_parser *par, char *content)
 {
-	t_token	*new;
-	//t_token	*head;
+	t_token		*new;
 
+	while (par->tokens->next)
+		par->tokens = par->tokens->next;
+	new = (t_token*)malloc(sizeof(t_token));
+	ft_bzero(new, sizeof(t_token));
+	new->type = LABEL;
+	if (content)
+		new->content = ft_strsub(content, 0, ft_strlen(content) - 1);
+	new->next = NULL;
+	par->tokens->next = new;
+	par->tokens = par->tokens->next;
+	par->tokens->bytes = g_bytes;
+}
+
+void			add_label_token(t_parser *par, char *content)
+{
 	if (!par->tokens)
 	{
 		par->tokens = (t_token*)malloc(sizeof(t_token));
 		ft_bzero(par->tokens, sizeof(t_token));
 		par->tokens->type = LABEL;
-		//par->tokens->row = par->y;
 		if (content)
-			par->tokens->content = ft_strsub(content, 0, ft_strlen(content) - 1);
+			par->tokens->content =
+			ft_strsub(content, 0, ft_strlen(content) - 1);
 		par->tokens->next = NULL;
 		par->head = par->tokens;
 		par->tokens->bytes = g_bytes;
 	}
 	else
-	{
-//		head = par->tokens;
-		while (par->tokens->next)
-		{
-			par->tokens = par->tokens->next;
-		}
-		new = (t_token*)malloc(sizeof(t_token));
-		ft_bzero(new, sizeof(t_token));
-		new->type = LABEL;
-		if (content)
-			new->content = ft_strsub(content, 0, ft_strlen(content) - 1);
-		new->next = NULL;
-		par->tokens->next = new;
-		par->tokens = par->tokens->next;
-		par->tokens->bytes = g_bytes;
-	}
+		add_label_token2(par, content);
 	add_label(par, par->tokens);
 }

@@ -12,24 +12,36 @@
 
 #include "asm.h"
 
-unsigned    add_bytes(t_token *operator, char *label, t_parser *par)
+void			search_label(t_parser *par, char *label)
 {
-	unsigned cur_byte;
-	unsigned label_byte;
-	t_label *head;
+	t_label		*head;
+
+	head = par->labels;
+	while (head)
+	{
+		if (ft_strcmp(head->point->content, label) == 0)
+			return ;
+		head = head->next;
+	}
+	error_no_label(label);
+}
+
+unsigned		add_bytes(t_token *operator, char *label, t_parser *par)
+{
+	unsigned	cur_byte;
+	unsigned	label_byte;
+	t_label		*head;
 
 	head = par->labels;
 	cur_byte = operator->bytes;
-
 	while (head->next)
 	{
 		if (ft_strcmp(label, head->point->content) == 0)
-			break;
+			break ;
 		head = head->next;
 	}
 	while (head->point->next && head->point->next->type != OPERATOR)
 		head->point = head->point->next;
-
 	if (head->point->next)
 		label_byte = head->point->next->bytes;
 	else
@@ -37,16 +49,17 @@ unsigned    add_bytes(t_token *operator, char *label, t_parser *par)
 	return (label_byte - cur_byte);
 }
 
-void    bytes_in_labels(t_parser *par)
+void			bytes_in_labels(t_parser *par)
 {
-	t_token *operator;
+	t_token		*operator;
 
 	operator = NULL;
 	while (par->tokens)
 	{
 		if (par->tokens->type == OPERATOR)
 			operator = par->tokens;
-		else if (par->tokens->type == INDIRECT_LABEL || par->tokens->type == DIRECT_LABEL)
+		else if (par->tokens->type == INDIRECT_LABEL || par->tokens->type ==
+		DIRECT_LABEL)
 		{
 			search_label(par, par->tokens->content);
 			par->tokens->data = add_bytes(operator, par->tokens->content, par);
@@ -55,16 +68,16 @@ void    bytes_in_labels(t_parser *par)
 	}
 }
 
-void file_cor(t_parser *par)
+void			file_cor(t_parser *par)
 {
-	int fd;
-	char *name;
+	int			fd;
+	char		*name;
 
 	name = ft_strsub(par->file_name, 0, ft_strlen(par->file_name) - 2);
 	name = ft_strjoin_free(name, ".cor", 1, 0);
-	if((fd = open(name, O_CREAT | O_TRUNC | O_WRONLY, 0644)) == -1)
+	if ((fd = open(name, O_CREAT | O_TRUNC | O_WRONLY, 0644)) == -1)
 		error_mc();
-	if(write(fd, g_buf, EXEC_START + g_bytes) == -1)
+	if (write(fd, g_buf, EXEC_START + g_bytes) == -1)
 	{
 		free(name);
 		close(fd);

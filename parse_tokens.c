@@ -107,5 +107,5 @@ void	new_token(t_parser *par)
 		par->x = i;
 		ft_strdel(&string);
 	}
-	parse_args(par);
+	parse_args(par, par->x);
 }

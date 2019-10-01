@@ -14,18 +14,18 @@
 
 char	*ft_strncpy(char *dest, const char *src, size_t n)
 {
-    unsigned char	*orig;
-    unsigned char	*res;
+	unsigned char	*orig;
+	unsigned char	*res;
 
-    orig = (unsigned char *)src;
-    res = (unsigned char *)dest;
-    while (n && *orig)
-    {
-        *(res++) = *(orig++);
-        n--;
-    }
+	orig = (unsigned char *)src;
+	res = (unsigned char *)dest;
+	while (n && *orig)
+	{
+		*(res++) = *(orig++);
+		n--;
+	}
 	*(res++) = '\0';
-    while (n-- > 0)
-        *(res++) = '\0';
-    return (dest);
+	while (n-- > 0)
+		*(res++) = '\0';
+	return (dest);
 }
