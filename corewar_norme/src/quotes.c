@@ -14,9 +14,14 @@
 
 int		while_next_space(char *str, int i, t_parser *par)
 {
-	while (str[i] && str[i] != ' ')
+	while (str[i] && str[i] != ' ' && str[i] != '"')
 		i++;
 	check_name_of_comment(par, str, i);
+	if (str[i] == '"')
+	{
+		par->x += i + 2;
+		return (i);
+	}
 	while (str[i + 1] && str[i] == ' ')
 	{
 		if (str[i + 1] != ' ')

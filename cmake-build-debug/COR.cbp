@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="COR"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/nwispmot/Desktop/COR/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/nwispmot/Desktop/COR/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/nwispmot/Desktop/COR/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/nwispmot/Desktop/COR/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/nwispmot/Desktop/COR/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/nwispmot/Desktop/COR/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/nwispmot/Desktop/COR/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/nwispmot/Desktop/COR/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/nwispmot/Desktop/COR/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/nwispmot/Desktop/COR/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/nwispmot/Desktop/COR/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/nwispmot/Desktop/COR/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/nwispmot/Desktop/COR/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/nwispmot/Desktop/COR/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/nwispmot/Desktop/COR/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="COR">
+				<Option output="/Users/nwispmot/Desktop/COR/cmake-build-debug/COR" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/nwispmot/Desktop/COR/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/nwispmot/Desktop/COR/corewar_norme/inc"/>
+					<Add directory="/Users/nwispmot/Desktop/COR/corewar_norme/libft"/>
+					<Add directory="/Users/nwispmot/Desktop/COR/corewar_norme/src"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/nwispmot/Desktop/COR/cmake-build-debug/Makefile&quot;  VERBOSE=1 COR"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/nwispmot/Desktop/COR/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/nwispmot/Desktop/COR/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/nwispmot/Desktop/COR/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="COR/fast">
+				<Option output="/Users/nwispmot/Desktop/COR/cmake-build-debug/COR" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/nwispmot/Desktop/COR/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/nwispmot/Desktop/COR/corewar_norme/inc"/>
+					<Add directory="/Users/nwispmot/Desktop/COR/corewar_norme/libft"/>
+					<Add directory="/Users/nwispmot/Desktop/COR/corewar_norme/src"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/nwispmot/Desktop/COR/cmake-build-debug/Makefile&quot;  VERBOSE=1 COR/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/nwispmot/Desktop/COR/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/nwispmot/Desktop/COR/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/nwispmot/Desktop/COR/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/inc/asm.h">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/inc/op.h">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/inc/op_struct.h">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/char_str.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/check.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/float.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_atoi.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_atoi_base.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_atol.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_bzero.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_count_if.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_is_negative.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_isalnum.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_isalpha.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_isascii.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_isdigit.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_isprint.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_itoa.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_lstadd.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_lstdel.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_lstdelone.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_lstiter.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_lstmap.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_lstnew.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_ltoa.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_ltoa_base.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_memalloc.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_memccpy.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_memchr.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_memcmp.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_memcpy.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_memdel.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_memmove.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_memset.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_pow.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_printf.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_printf.h">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_putchar.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_putchar_fd.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_putendl.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_putendl_fd.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_putnbr.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_putnbr_fd.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_putstr.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_putstr_fd.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_range.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_recursive_factorial.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_sqrt.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_strcat.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_strchr.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_strclr.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_strcmp.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_strcpy.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_strdel.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_strdup.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_strdup_free.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_strequ.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_striter.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_striteri.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_strjoin.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_strjoin_free.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_strlcat.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_strlen.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_strmap.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_strmapi.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_strncat.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_strncmp.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_strncpy.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_strnequ.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_strnew.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_strnstr.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_strrchr.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_strsplit.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_strsplit_n.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_strsplit_tab_space.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_strstr.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_strsub.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_strsub_free.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_strtrim.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_swap.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_swap_d.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_tolower.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_toupper.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ft_utoa.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/ftoa.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/get_next_line.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/get_next_line.h">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/int_dec.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/lhex.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/libft.h">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/octal.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/parse.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/percent_sharp.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/pointer.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/uhex.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/unsigned.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/libft/width.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/src/add_label_token.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/src/args_types.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/src/asm.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/src/create.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/src/error_file.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/src/error_usage.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/src/errors.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/src/fill.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/src/name_comment.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/src/new_name_or_commit.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/src/new_token.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/src/parse_tokens.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/corewar_norme/src/quotes.c">
+			<Option target="COR"/>
+		</Unit>
+		<Unit filename="/Users/nwispmot/Desktop/COR/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

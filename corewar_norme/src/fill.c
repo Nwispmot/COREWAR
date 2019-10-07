@@ -88,7 +88,12 @@ void	filler_char_array(t_parser *par, unsigned dest)
 
 void	fill_and_create(t_parser *parser)
 {
-	ft_printf("Writing output program to %s\n", parser->file_name);
+	char *str;
+
+	str = ft_strsub(parser->file_name, 0, ft_strlen(parser->file_name) - 2);
+	str = ft_strjoin_free(str, ".cor", 1, 0);
+	ft_printf("Writing output program to %s\n", str);
+	free(str);
 	g_buf = (char *)malloc(sizeof(char) * (EXEC_START + g_bytes));
 	ft_bzero(g_buf, (EXEC_START + g_bytes));
 	int_to_hex(COREWAR_EXEC_MAGIC, 4, 0);

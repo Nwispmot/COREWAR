@@ -52,6 +52,8 @@ void		is_registry(char *string, t_parser *par)
 	while (string[i] != '\0' && string[++i])
 		if (string[i] != '\t' && string[i] != ' ')
 			error_lexical(par->y, par->x + i);
+	if (ft_atoi(string) == 0)
+		error_lexical(par->y, par->x + i);
 	add_token(par, REGISTER, string);
 	par->tokens->data = ft_atoi(string);
 }
